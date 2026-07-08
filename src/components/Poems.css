@@ -1,0 +1,126 @@
+.poems-v2 {
+  background-color: var(--bg-dark-accent);
+}
+
+.poems-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.poem-card-v2 {
+  background-color: #0e172f; /* Dark slate navy card */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 60px 40px;
+  text-align: center;
+  border-radius: 2px;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poem-card-v2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(197, 168, 128, 0.04) 0%,
+    transparent 70%
+  );
+  z-index: 1;
+}
+
+.poem-card-v2:hover {
+  border-color: var(--border-color-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.poem-card-top-v2 {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 30px;
+}
+
+.poem-laurel-v2 {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--accent-gold);
+  margin-bottom: 12px;
+}
+
+.poem-title-v2 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+.poem-body-v2 {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 36px;
+}
+
+.poem-line-v2 {
+  font-family: var(--font-serif), 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  line-height: 2;
+  color: #e5e7eb;
+  margin-bottom: 12px;
+}
+
+.poem-author-v2 {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-gold);
+  margin-top: auto;
+  font-weight: 500;
+}
+
+.poem-link-v2 {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  padding: 10px 24px;
+  margin-top: 24px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.poem-link-v2:hover {
+  background-color: var(--accent-gold);
+  color: #0e172f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(197, 168, 128, 0.25);
+}
+
+@media (max-width: 900px) {
+  .poems-grid-v2 {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .poem-card-v2 {
+    padding: 40px 24px;
+  }
+}

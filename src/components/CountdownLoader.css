@@ -1,0 +1,182 @@
+.countdown-loader-v2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #8c8c8c; /* Vintage Film Gray */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Film Scratch Overlay */
+.film-scratch-overlay-v2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 10005;
+  opacity: 0.15;
+  pointer-events: none;
+  animation: scratches 1.5s steps(1) infinite;
+}
+
+@keyframes scratches {
+  0%, 100% {
+    background-image: radial-gradient(circle, #000 1px, transparent 1px),
+                      linear-gradient(to right, transparent 50%, #000 50%, transparent 51%);
+    background-size: 4px 4px, 100% 1px;
+    background-position: 10% 20%, 0 0;
+  }
+  20% {
+    background-image: radial-gradient(circle, #000 2px, transparent 2px),
+                      linear-gradient(to right, transparent 20%, #000 20%, transparent 21%);
+    background-position: 40% 60%, 15px 0;
+  }
+  40% {
+    background-image: radial-gradient(circle, #000 1px, transparent 1px),
+                      linear-gradient(to right, transparent 80%, #000 80%, transparent 81%);
+    background-position: 80% 10%, -20px 0;
+  }
+  60% {
+    background-image: radial-gradient(circle, #000 3px, transparent 3px),
+                      linear-gradient(to right, transparent 40%, #000 40%, transparent 41%);
+    background-position: 30% 70%, 30px 0;
+  }
+  80% {
+    background-image: radial-gradient(circle, #000 1px, transparent 1px),
+                      linear-gradient(to right, transparent 70%, #000 70%, transparent 71%);
+    background-position: 90% 40%, -10px 0;
+  }
+}
+
+/* Fine grain flicker */
+.film-grain-overlay-v2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 10004;
+  opacity: 0.12;
+  pointer-events: none;
+  animation: grainFlicker 0.15s steps(1) infinite;
+}
+
+@keyframes grainFlicker {
+  0%, 100% { background-color: rgba(255, 255, 255, 0.05); }
+  50% { background-color: rgba(0, 0, 0, 0.05); }
+}
+
+/* Crosshair lines */
+.film-crosshair-h-v2 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(26, 26, 26, 0.2);
+  z-index: 10001;
+}
+
+.film-crosshair-v-v2 {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(26, 26, 26, 0.2);
+  z-index: 10001;
+}
+
+/* Film target target */
+.film-target-outer-v2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  border: 4px solid #1a1a1a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10002;
+}
+
+.film-target-inner-v2 {
+  width: 270px;
+  height: 270px;
+  border: 2px solid #1a1a1a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Big numbers counting */
+.film-count-num-v2 {
+  font-family: var(--font-sans);
+  font-size: 9.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1;
+  text-align: center;
+  animation: numberPulse 1s ease-in-out infinite;
+}
+
+@keyframes numberPulse {
+  0% { transform: scale(1); opacity: 0.95; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.95; }
+}
+
+/* Skip Intro button */
+.skip-intro-btn-v2 {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  background: transparent;
+  border: 1px solid #1a1a1a;
+  color: #1a1a1a;
+  padding: 10px 20px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  z-index: 10006;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.skip-intro-btn-v2:hover {
+  background: #1a1a1a;
+  color: #8c8c8c;
+}
+
+@media (max-width: 500px) {
+  .film-target-outer-v2 {
+    width: 240px;
+    height: 240px;
+  }
+  .film-target-inner-v2 {
+    width: 200px;
+    height: 200px;
+  }
+  .film-count-num-v2 {
+    font-size: 6.5rem;
+  }
+  .skip-intro-btn-v2 {
+    bottom: 24px;
+    right: 24px;
+  }
+}
