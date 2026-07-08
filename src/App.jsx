@@ -14,7 +14,7 @@ import './App.css';
 function App() {
   const [activeVideo, setActiveVideo] = useState(null);
   const [showLoader, setShowLoader] = useState(true);
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
 
   React.useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
