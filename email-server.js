@@ -1,12 +1,17 @@
 import express from 'express';
 import cors from 'cors';
+import 'dotenv/config';
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const RESEND_API_KEY = "re_fe4zn1sJ_HNsQrGL1un6EPii5BXqKGDiU";
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const TARGET_EMAIL = "krishna613460@gmail.com";
+
+if (!RESEND_API_KEY) {
+  console.warn("WARNING: RESEND_API_KEY is not defined in the environment (check .env file)!");
+}
 
 app.post('/api/send-email', async (req, res) => {
   const { name, email, message } = req.body;
