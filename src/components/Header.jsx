@@ -1,6 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 
+const logoParticles = [
+  { id: 1, char: 'K', size: 11, x: -65, y: -65, rot: '-45deg', delay: '0.2s', duration: '4s' },
+  { id: 2, char: 'a', size: 8, x: 65, y: -75, rot: '60deg', delay: '1.2s', duration: '4.5s' },
+  { id: 3, char: 'l', size: 9, x: -75, y: 35, rot: '-90deg', delay: '0.7s', duration: '3.8s' },
+  { id: 4, char: 'p', size: 9, x: 75, y: 55, rot: '45deg', delay: '2.0s', duration: '4.2s' },
+  { id: 5, char: 'i', size: 7, x: -35, y: -85, rot: '-30deg', delay: '1.5s', duration: '3.5s' },
+  { id: 6, char: 't', size: 8, x: 45, y: -65, rot: '75deg', delay: '0.5s', duration: '4.1s' },
+  { id: 7, char: 'F', size: 12, x: -55, y: 75, rot: '-60deg', delay: '2.5s', duration: '4.8s' },
+  { id: 8, char: '✨', size: 10, x: 85, y: -45, rot: '120deg', delay: '1.0s', duration: '3.6s' },
+  { id: 9, char: '✨', size: 6, x: -85, y: -35, rot: '-15deg', delay: '1.8s', duration: '4.3s' }
+];
+
 export default function Header({ theme, toggleTheme, setTheme }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [socialStyle, setSocialStyle] = useState({});
@@ -82,6 +94,24 @@ export default function Header({ theme, toggleTheme, setTheme }) {
         </nav>
 
         <div className="logo-center-v2" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <div className="logo-particles-container-v2">
+            {logoParticles.map((p) => (
+              <span 
+                key={p.id} 
+                className="logo-particle-v2" 
+                style={{
+                  '--tx': `${p.x}px`,
+                  '--ty': `${p.y}px`,
+                  '--rot': p.rot,
+                  animationDelay: p.delay,
+                  animationDuration: p.duration,
+                  fontSize: `${p.size}px`
+                }}
+              >
+                {p.char}
+              </span>
+            ))}
+          </div>
           <div className="logo-animated-svg-v2">
             <svg viewBox="0 0 200 200" className="header-logo-svg-v2" role="img" aria-label="Kalpit Films logo">
               <defs>

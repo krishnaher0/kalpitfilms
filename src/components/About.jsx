@@ -32,7 +32,7 @@ const teamMembers = [
   {
     id: 1,
     name: 'Amit Pokhrel',
-    role: 'CEO & Director',
+    role: 'Founder & CEO',
     image: '/team/amit.jpg',
     socials: {
       facebook: 'https://www.facebook.com/Amiteeyy',
@@ -43,7 +43,7 @@ const teamMembers = [
   {
     id: 2,
     name: 'Kushal Pokhrel',
-    role: 'COO & Producer',
+    role: 'Co-Founder & COO',
     image: '/team/kushal.webp',
     socials: {
       facebook: 'https://www.facebook.com/kushal.pokhrel.526',
@@ -53,7 +53,7 @@ const teamMembers = [
   {
     id: 3,
     name: 'Krishna Bhandari',
-    role: 'CTO & Social Media Manager',
+    role: 'Co-Founder & CTO',
     image: '/team/krishna.jpg',
     socials: {
       instagram: 'https://www.instagram.com/krishnabhandari124/'
@@ -120,7 +120,7 @@ export default function About() {
 
         {/* 1. What We Do Section - Calibrated list layout */}
         <div className="capabilities-section-v2">
-          <h3 className="about-subheading-v2">Production Capabilities</h3>
+          <h3 className="about-subheading-v2">Collaborate with us</h3>
           <div className="capabilities-grid-v2">
             {capabilities.map((cap) => (
               <div key={cap.id} className="capability-card-wrapper animate-fade-in">
@@ -201,11 +201,11 @@ export default function About() {
               <div className="contact-meta-v2">
                 <div className="contact-meta-item-v2">
                   <strong>Email</strong>
-                  <span>hello@kalpitfilms.com</span>
+                  <span>kalpitfilms@gmail.com</span>
                 </div>
                 <div className="contact-meta-item-v2">
                   <strong>Phone</strong>
-                  <span>+977 1 4412345</span>
+                  <span>+977 9846967698</span>
                 </div>
                 <div className="contact-meta-item-v2">
                   <strong>Studio</strong>

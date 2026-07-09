@@ -569,3 +569,45 @@
     background-color: transparent;
   }
 }
+
+/* Floating particles (letters/glitter) styling */
+.logo-particles-container-v2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.logo-particle-v2 {
+  position: absolute;
+  left: 50%;
+  top: 40%; /* centered around the logo SVG height */
+  transform: translate(-50%, -50%);
+  color: var(--accent-gold);
+  opacity: 0;
+  pointer-events: none;
+  font-family: var(--font-serif);
+  font-weight: 300;
+  text-shadow: 0 0 8px rgba(251, 191, 36, 0.45);
+  animation: logo-particle-float 4s ease-in-out infinite;
+}
+
+@keyframes logo-particle-float {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0) scale(0.4) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) scale(1.1) rotate(var(--rot));
+    opacity: 0;
+  }
+}
