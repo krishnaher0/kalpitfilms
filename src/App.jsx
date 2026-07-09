@@ -3,7 +3,6 @@ import Header from './components/Header';
 import HeroSlider from './components/HeroSlider';
 import Portfolio from './components/Portfolio';
 import Gallery from './components/Gallery';
-import Poems from './components/Poems';
 import About from './components/About';
 import Partners from './components/Partners';
 import Contact from './components/Contact';
@@ -53,7 +52,6 @@ function App() {
         <HeroSlider scrollToSection={scrollToSection} />
         <About />
         <Gallery />
-        <Poems />
         <Partners />
         <Contact />
       </main>

@@ -49,7 +49,7 @@ export default function Header({ theme, toggleTheme }) {
             <div className="dropdown-menu-v2">
               <a onClick={() => handleGalleryClick('bts')} className="dropdown-item-v2">Behind the scenes</a>
               <a onClick={() => handleGalleryClick('pictures')} className="dropdown-item-v2">Pictures</a>
-              <a onClick={() => scrollToSection('poems')} className="dropdown-item-v2">Poems</a>
+              
             </div>
           </div>
           <a onClick={() => scrollToSection('about')} className="gold-link">About US</a>
