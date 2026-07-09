@@ -74,12 +74,12 @@ export default function Contact() {
 
               <div className="details-item-v2">
                 <h4 className="details-lbl-v2">Production Desk</h4>
-                <p className="details-val-v2">hello@kalpitfilms.com</p>
+                <p className="details-val-v2">kalpitfilms@gmail.com</p>
               </div>
 
               <div className="details-item-v2">
                 <h4 className="details-lbl-v2">Call Studio</h4>
-                <p className="details-val-v2">+977 1 4412345</p>
+                <p className="details-val-v2">+977 9846967698</p>
               </div>
             </div>
 

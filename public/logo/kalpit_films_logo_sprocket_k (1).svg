@@ -1,0 +1,42 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sprocketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="goldHighlight" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97706" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Tech Circles -->
+  <circle cx="100" cy="100" r="85" stroke="#d97706" stroke-width="0.75" stroke-dasharray="3 8" opacity="0.3" />
+  <circle cx="100" cy="100" r="80" stroke="#fbbf24" stroke-width="0.5" opacity="0.45" />
+
+  <!-- Left Column: Filmstrip Sprocket Base -->
+  <rect x="38" y="22" width="22" height="156" rx="5" stroke="url(#sprocketGrad)" stroke-width="3.5" stroke-linejoin="round" />
+
+  <!-- Fine sprocket cell blocks -->
+  <rect x="44" y="28" width="10" height="8" rx="1.5" fill="#d97706" stroke="#fbbf24" stroke-width="1.5" />
+  <rect x="44" y="48" width="10" height="8" rx="1.5" stroke="#fbbf24" stroke-width="1.5" />
+  <rect x="44" y="68" width="10" height="8" rx="1.5" fill="#d97706" stroke="#fbbf24" stroke-width="1.5" />
+  <rect x="44" y="88" width="10" height="8" rx="1.5" stroke="#fbbf24" stroke-width="1.5" />
+  <rect x="44" y="108" width="10" height="8" rx="1.5" fill="#d97706" stroke="#fbbf24" stroke-width="1.5" />
+  <rect x="44" y="128" width="10" height="8" rx="1.5" stroke="#fbbf24" stroke-width="1.5" />
+  <rect x="44" y="148" width="10" height="8" rx="1.5" fill="#d97706" stroke="#fbbf24" stroke-width="1.5" />
+
+  <!-- Symmetrical audio tracking line -->
+  <line x1="67" y1="22" x2="67" y2="178" stroke="#d97706" stroke-width="1" stroke-dasharray="4 2" opacity="0.4" />
+
+  <!-- Upper Diagonal: Sweeping lens curve -->
+  <path d="M 60 92 C 85 92, 115 42, 155 42 C 168 42, 172 52, 162 65 C 144 88, 108 106, 60 106" stroke="url(#goldHighlight)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+  <!-- Lower Diagonal: Optical prism trail -->
+  <path d="M 60 110 C 105 110, 142 132, 160 156 C 168 168, 156 178, 142 178 C 112 178, 88 142, 60 124" stroke="url(#sprocketGrad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+  <!-- Lens Reflection Nodes -->
+  <circle cx="60" cy="100" r="4.5" fill="#d97706" />
+  <circle cx="108" cy="100" r="3" fill="#ffffff" />
+</svg>

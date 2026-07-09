@@ -6,7 +6,7 @@ const capabilities = [
     id: 1,
     title: 'Preproduction',
     desc: 'Script analysis, location scouting, budget allocations, casting calls, and conceptual storyboards.',
-    bgImage: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=800&auto=format&fit=crop'
+    bgImage: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 2,
@@ -63,6 +63,50 @@ const teamMembers = [
 
 export default function About() {
   const [activeCap, setActiveCap] = React.useState(null);
+  const [form, setForm] = React.useState({ name: '', email: '', message: '' });
+  const [formState, setFormState] = React.useState({ loading: false, success: null, error: null });
+
+  const validateEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setForm((s) => ({ ...s, [name]: value }));
+    setFormState({ loading: false, success: null, error: null });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormState({ loading: false, success: null, error: null });
+
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      setFormState({ loading: false, success: null, error: 'Please complete all fields.' });
+      return;
+    }
+    if (!validateEmail(form.email)) {
+      setFormState({ loading: false, success: null, error: 'Please provide a valid email address.' });
+      return;
+    }
+
+    setFormState({ loading: true, success: null, error: null });
+    try {
+      const resp = await fetch('http://localhost:5005/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
+      });
+      const data = await resp.json();
+      if (resp.ok) {
+        setFormState({ loading: false, success: 'Message sent — we will reply soon.', error: null });
+        setForm({ name: '', email: '', message: '' });
+      } else {
+        setFormState({ loading: false, success: null, error: data.error || 'Failed to send message.' });
+      }
+    } catch (err) {
+      setFormState({ loading: false, success: null, error: err.message || 'Network error' });
+    }
+  };
 
   return (
     <section id="about" className="section about-v2">
@@ -132,7 +176,7 @@ export default function About() {
             <div className="director-overlay-v2"></div>
           </div>
           <div className="director-info-v2">
-            <span className="director-title-label-v2">Director & Founder</span>
+            <span className="director-title-label-v2">Founder & CEO</span>
             <h3 className="director-name-v2">Amit Pokhrel</h3>
             <p className="director-quote-v2">
               "Cinema is not just a combination of sound and light; it is a translation of dreams into physical frames. We look at Kathmandu valleys and Annapurna peaks as natural canvases for stories."
@@ -145,7 +189,57 @@ export default function About() {
 
         <div className="film-divider"></div>
 
-        {/* 3. Team Section */}
+        {/* 3. Contact Form Section */}
+        <div id="contact" className="contact-section-in-about-v2 animate-fade-in">
+          <div className="contact-inner-grid-v2">
+            <div className="contact-details-panel-v2">
+              <span className="section-subtitle">Reach Us</span>
+              <h3 className="about-subheading-v2">Contact the Studio</h3>
+              <p className="contact-blurb-v2">
+                For film inquiries, script development, production partnerships, or location scouting support, send us a message and our team will respond promptly.
+              </p>
+              <div className="contact-meta-v2">
+                <div className="contact-meta-item-v2">
+                  <strong>Email</strong>
+                  <span>hello@kalpitfilms.com</span>
+                </div>
+                <div className="contact-meta-item-v2">
+                  <strong>Phone</strong>
+                  <span>+977 1 4412345</span>
+                </div>
+                <div className="contact-meta-item-v2">
+                  <strong>Studio</strong>
+                  <span>Lazimpat Road, Kathmandu</span>
+                </div>
+              </div>
+            </div>
+            <div className="contact-form-panel-v2">
+              <form className="about-contact-form-v2" onSubmit={handleSubmit} noValidate>
+                <div className="form-group-v2">
+                  <label htmlFor="about-name" className="form-label-v2">Full Name</label>
+                  <input id="about-name" name="name" type="text" className="form-input-v2" placeholder="Your full name" value={form.name} onChange={handleInput} />
+                </div>
+                <div className="form-group-v2">
+                  <label htmlFor="about-email" className="form-label-v2">Email Address</label>
+                  <input id="about-email" name="email" type="email" className="form-input-v2" placeholder="name@company.com" value={form.email} onChange={handleInput} />
+                </div>
+                <div className="form-group-v2">
+                  <label htmlFor="about-message" className="form-label-v2">Message</label>
+                  <textarea id="about-message" name="message" rows="5" className="form-textarea-v2" placeholder="Describe your film or production idea" value={form.message} onChange={handleInput}></textarea>
+                </div>
+                <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                  <button type="submit" className="btn-primary" disabled={formState.loading}>{formState.loading ? 'Sending…' : 'Send Message'}</button>
+                  {formState.success && <div className="form-success-msg">{formState.success}</div>}
+                  {formState.error && <div className="form-error-msg">{formState.error}</div>}
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div className="film-divider"></div>
+
+        {/* 4. Team Section */}
         <div className="team-section-v2">
           <h3 className="about-subheading-v2">Our Creative Team</h3>
           <div className="team-grid-v2">

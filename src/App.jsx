@@ -4,8 +4,6 @@ import HeroSlider from './components/HeroSlider';
 import Portfolio from './components/Portfolio';
 import Gallery from './components/Gallery';
 import About from './components/About';
-import Partners from './components/Partners';
-import Contact from './components/Contact';
 import Trailers from './components/Trailers';
 import CountdownLoader from './components/CountdownLoader';
 import './App.css';
@@ -47,13 +45,11 @@ function App() {
 
   return (
     <>
-      <Header theme={theme} toggleTheme={toggleTheme} />
+      <Header theme={theme} toggleTheme={toggleTheme} setTheme={setTheme} />
       <main className="main-content">
         <HeroSlider scrollToSection={scrollToSection} />
         <About />
         <Gallery />
-        <Partners />
-        <Contact />
       </main>
 
       <footer className="footer-v2">
@@ -67,11 +63,10 @@ function App() {
           
           <div className="footer-nav-v2">
             <a onClick={() => scrollToSection('home')} className="footer-link-v2">Home</a>
-            <a onClick={() => scrollToSection('portfolio')} className="footer-link-v2">Portfolio</a>
+            
             <a onClick={() => scrollToSection('gallery')} className="footer-link-v2">Gallery</a>
-            <a onClick={() => scrollToSection('poems')} className="footer-link-v2">Poems</a>
+          
             <a onClick={() => scrollToSection('about')} className="footer-link-v2">About US</a>
-            <a onClick={() => scrollToSection('contact')} className="footer-link-v2">Contact</a>
           </div>
         </div>
       </footer>

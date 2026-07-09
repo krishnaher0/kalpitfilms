@@ -54,7 +54,7 @@ export default function Services() {
       <div className="container">
         <div className="section-title-wrapper">
           <span className="section-subtitle">What We Do</span>
-          <h2 className="section-title">Production Capabilities</h2>
+          <h2 className="section-title">Collaborate with us</h2>
         </div>
 
         <div className="services-grid">

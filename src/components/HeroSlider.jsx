@@ -2,33 +2,18 @@ import React, { useState, useEffect } from 'react';
 import './HeroSlider.css';
 
 const sliderSlides = [
-  {
-    id: 1,
-    title: 'KALPIT FILMS',
-    subtitle: 'A new vision of cinematic storytelling, anchored in the heart of Nepal.',
-    image: '/gallery/mountain.jpg',
-    bgVideoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-cinematic-mountain-range-covered-in-fog-and-snow-40348-large.mp4',
-    btnText: 'Discover Our Vision',
-    targetId: 'about'
-  },
-  {
-    id: 2,
-    title: 'CRAFTING STORYTELLING',
-    subtitle: 'From conceptual screenplays and location logistics to high-fidelity production management.',
-    image: '/gallery/temple.jpg',
-    bgVideoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-starry-night-sky-with-clouds-in-time-lapse-40013-large.mp4',
-    btnText: 'Explore Capabilities',
-    targetId: 'about'
-  },
-  {
-    id: 3,
-    title: 'FRAMED IN MAJESTY',
-    subtitle: 'Capturing the raw landscape, culture, and humanity of the Himalayas.',
-    image: '/gallery/rain.jpg',
-    bgVideoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-forest-stream-in-the-sunlight-529-large.mp4',
-    btnText: 'Connect With Us',
-    targetId: 'contact'
-  }
+  { id: 1, title: 'KALPIT FILMS', subtitle: 'A new vision of cinematic storytelling.', image: '/pictures/934B0DB2-E42C-417A-8976-6066D1BAD0A0.jpeg', targetId: 'about' },
+  { id: 2, title: 'DISCOVER THE FRAME', subtitle: 'Bold visuals meet cinematic craft.', image: '/pictures/FCC1DD78-931B-40F3-9A20-44C8696DA5B4.jpeg', targetId: 'about' },
+  { id: 3, title: 'STILL MOMENTS', subtitle: 'Every shot tells the story of a film journey.', image: '/pictures/IMG_0615.JPG', targetId: 'about' },
+  { id: 4, title: 'CREATIVE MOTION', subtitle: 'A palette of light, landscape, and motion.', image: '/pictures/IMG_9490.jpeg', targetId: 'about' },
+  { id: 5, title: 'CINEMATIC DEPTH', subtitle: 'We capture drama in every composition.', image: '/pictures/IMG_9776.jpeg', targetId: 'about' },
+  { id: 6, title: 'VISION IN FOCUS', subtitle: 'Crafting cinematic stories with precision.', image: '/pictures/pic1.jpg', targetId: 'about' },
+  { id: 7, title: 'STORY ARCHITECTURE', subtitle: 'Building narrative through visual design.', image: '/pictures/pic2.jpg', targetId: 'about' },
+  { id: 8, title: 'MOOD AND TEXTURE', subtitle: 'A visual language for every scene.', image: '/pictures/pic3.jpg', targetId: 'about' },
+  { id: 9, title: 'FRAMEWORK', subtitle: 'Images that speak to your brand voice.', image: '/pictures/pic4.jpg', targetId: 'about' },
+  { id: 10, title: 'EMOTIONAL PERSPECTIVE', subtitle: 'Still frames with cinematic emotion.', image: '/pictures/pic5.jpg', targetId: 'about' },
+  { id: 11, title: 'IMMERSE THE AUDIENCE', subtitle: 'Powerful visuals for every project.', image: '/pictures/pic6.jpg', targetId: 'about' },
+  { id: 12, title: 'BOLD EXPRESSION', subtitle: 'Epic shots from the Kalpit Films archive.', image: '/pictures/pic7.jpg', targetId: 'about' }
 ];
 
 export default function HeroSlider({ scrollToSection }) {
@@ -36,17 +21,34 @@ export default function HeroSlider({ scrollToSection }) {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % sliderSlides.length);
+      setActiveSlide((prev) => {
+        const next = (prev + 1) % sliderSlides.length;
+        window.dispatchEvent(new CustomEvent('hero-slide-change', { detail: { index: next } }));
+        return next;
+      });
     }, 6000);
     return () => clearInterval(timer);
   }, []);
 
+  // Notify initial active slide and when it changes from other sources
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent('hero-slide-change', { detail: { index: activeSlide } }));
+  }, [activeSlide]);
+
   const handlePrev = () => {
-    setActiveSlide((prev) => (prev - 1 + sliderSlides.length) % sliderSlides.length);
+    setActiveSlide((prev) => {
+      const next = (prev - 1 + sliderSlides.length) % sliderSlides.length;
+      window.dispatchEvent(new CustomEvent('hero-slide-change', { detail: { index: next } }));
+      return next;
+    });
   };
 
   const handleNext = () => {
-    setActiveSlide((prev) => (prev + 1) % sliderSlides.length);
+    setActiveSlide((prev) => {
+      const next = (prev + 1) % sliderSlides.length;
+      window.dispatchEvent(new CustomEvent('hero-slide-change', { detail: { index: next } }));
+      return next;
+    });
   };
 
   return (
@@ -90,17 +92,13 @@ export default function HeroSlider({ scrollToSection }) {
         ))}
       </div>
 
-      {/* Slider Controls */}
-      <button className="slider-arrow-v2 prev" onClick={handlePrev} aria-label="Previous slide">&#10229;</button>
-      <button className="slider-arrow-v2 next" onClick={handleNext} aria-label="Next slide">&#10230;</button>
-
       {/* Slider Dots */}
       <div className="slider-dots-v2">
         {sliderSlides.map((_, index) => (
           <button 
             key={index} 
             className={`slider-dot-v2 ${index === activeSlide ? 'active' : ''}`}
-            onClick={() => setActiveSlide(index)}
+              onClick={() => { setActiveSlide(index); window.dispatchEvent(new CustomEvent('hero-slide-change', { detail: { index } })); }}
             aria-label={`Go to slide ${index + 1}`}
           ></button>
         ))}
