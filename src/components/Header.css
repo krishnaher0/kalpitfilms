@@ -170,13 +170,14 @@
 }
 
 .logo-cursive-v2 {
-  font-family: var(--font-script);
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
   color: var(--accent-gold);
   text-shadow: 0 0 12px rgba(255, 215, 130, 0.25);
   white-space: nowrap;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   transition: var(--transition-smooth);
 }
 
@@ -462,9 +463,10 @@
   }
 
   .logo-center-v2 {
-    position: relative;
-    left: auto;
-    transform: none;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
   }
 
   .header-v2 {
@@ -610,4 +612,26 @@
     transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) scale(1.1) rotate(var(--rot));
     opacity: 0;
   }
+}
+
+/* Light theme scrolled header override */
+[data-theme="light"] .header-v2.scrolled {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+/* Light theme dropdown menu overrides for text legibility */
+[data-theme="light"] .nav-links-vertical-v2 {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .nav-link-v2 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .nav-link-v2:hover {
+  color: var(--accent-gold-hover) !important;
 }

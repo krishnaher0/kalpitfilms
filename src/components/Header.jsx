@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const logoParticles = [
@@ -25,6 +26,17 @@ export default function Header({ theme, toggleTheme, setTheme }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (sectionId) => {
+    if (location.pathname !== '/') {
+      navigate(`/#${sectionId}`);
+    } else {
+      scrollToSection(sectionId);
+    }
+  };
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -41,7 +53,15 @@ export default function Header({ theme, toggleTheme, setTheme }) {
 
   const handleGalleryClick = (tab) => {
     window.dispatchEvent(new CustomEvent('set-gallery-tab', { detail: tab }));
-    scrollToSection('gallery');
+    if (location.pathname !== '/') {
+      navigate('/#gallery');
+    } else {
+      scrollToSection('gallery');
+    }
+  };
+
+  const handleAboutClick = () => {
+    navigate('/about');
   };
 
   useEffect(() => {
@@ -78,22 +98,22 @@ export default function Header({ theme, toggleTheme, setTheme }) {
 
         <nav className="nav-menu-left-v2">
           <div className="nav-home-trigger-v2">
-            <button className="home-icon-btn-v2" onClick={() => scrollToSection('home')} aria-label="Home">
+            <button className="home-icon-btn-v2" onClick={() => handleNavClick('home')} aria-label="Home">
               <svg viewBox="0 0 24 24" className="home-icon-svg-v2" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M3 12L12 3l9 9" />
                 <path d="M9 21V12h6v9" />
               </svg>
             </button>
             <div className="nav-links-vertical-v2">
-              <a onClick={() => scrollToSection('home')} className="nav-link-v2">Home</a>
+              <a onClick={() => handleNavClick('home')} className="nav-link-v2">Home</a>
               <a onClick={() => handleGalleryClick('bts')} className="nav-link-v2">Behind the scenes</a>
               <a onClick={() => handleGalleryClick('pictures')} className="nav-link-v2">Pictures</a>
-              <a onClick={() => scrollToSection('about')} className="nav-link-v2">About</a>
+              <a onClick={handleAboutClick} className="nav-link-v2">About</a>
             </div>
           </div>
         </nav>
 
-        <div className="logo-center-v2" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <div className="logo-center-v2" onClick={() => { if (location.pathname !== '/') { navigate('/'); } else { window.scrollTo({ top: 0, behavior: 'smooth' }); } }}>
           <div className="logo-particles-container-v2">
             {logoParticles.map((p) => (
               <span 

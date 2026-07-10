@@ -1,26 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import HeroSlider from './components/HeroSlider';
-import Portfolio from './components/Portfolio';
+import Offers from './components/Offers';
 import Gallery from './components/Gallery';
 import About from './components/About';
-import Trailers from './components/Trailers';
+import Contact from './components/Contact';
 import CountdownLoader from './components/CountdownLoader';
 import './App.css';
 
-function App() {
+function AppContent({ theme, toggleTheme, setTheme, showLoader, handleLoaderComplete }) {
   const [activeVideo, setActiveVideo] = useState(null);
-  const [showLoader, setShowLoader] = useState(true);
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
+  const location = useLocation();
 
-  React.useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
-  };
+  // Scroll to hash element on load / route change
+  useEffect(() => {
+    if (!showLoader && location.hash) {
+      const id = location.hash.replace('#', '');
+      const timer = setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 200);
+      return () => clearTimeout(timer);
+    } else if (!showLoader && !location.hash) {
+      // scroll to top if navigating to another route without hash
+      window.scrollTo(0, 0);
+    }
+  }, [location, showLoader]);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -35,10 +49,6 @@ function App() {
     }
   };
 
-  const handleLoaderComplete = () => {
-    setShowLoader(false);
-  };
-
   if (showLoader) {
     return <CountdownLoader onComplete={handleLoaderComplete} />;
   }
@@ -47,9 +57,17 @@ function App() {
     <>
       <Header theme={theme} toggleTheme={toggleTheme} setTheme={setTheme} />
       <main className="main-content">
-        <HeroSlider scrollToSection={scrollToSection} />
-        <About />
-        <Gallery />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <HeroSlider scrollToSection={scrollToSection} />
+              <Offers />
+              <Gallery />
+              <Contact />
+            </>
+          } />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </main>
 
       <footer className="footer-v2">
@@ -62,16 +80,13 @@ function App() {
           </div>
           
           <div className="footer-nav-v2">
-            <a onClick={() => scrollToSection('home')} className="footer-link-v2">Home</a>
-            
-            <a onClick={() => scrollToSection('gallery')} className="footer-link-v2">Gallery</a>
-          
-            <a onClick={() => scrollToSection('about')} className="footer-link-v2">About US</a>
+            <a href="/" className="footer-link-v2" onClick={(e) => { e.preventDefault(); window.location.href = '/'; }}>Home</a>
+            <a href="/#gallery" className="footer-link-v2" onClick={(e) => { e.preventDefault(); window.location.href = '/#gallery'; }}>Gallery</a>
+            <a href="/about" className="footer-link-v2" onClick={(e) => { e.preventDefault(); window.location.href = '/about'; }}>About Us</a>
           </div>
         </div>
       </footer>
 
-      {/* Viewport Immersive Video Modal Overlay */}
       {activeVideo && (
         <div className="video-modal-v2" onClick={() => setActiveVideo(null)}>
           <div className="video-modal-content-v2" onClick={(e) => e.stopPropagation()}>
@@ -96,6 +111,36 @@ function App() {
         </div>
       )}
     </>
+  );
+}
+
+function App() {
+  const [showLoader, setShowLoader] = useState(true);
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
+
+  const handleLoaderComplete = () => {
+    setShowLoader(false);
+  };
+
+  return (
+    <Router>
+      <AppContent 
+        theme={theme} 
+        toggleTheme={toggleTheme} 
+        setTheme={setTheme} 
+        showLoader={showLoader} 
+        handleLoaderComplete={handleLoaderComplete} 
+      />
+    </Router>
   );
 }
 
