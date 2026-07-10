@@ -6,16 +6,15 @@ import Offers from './components/Offers';
 import Gallery from './components/Gallery';
 import About from './components/About';
 import Contact from './components/Contact';
-import CountdownLoader from './components/CountdownLoader';
 import './App.css';
 
-function AppContent({ theme, toggleTheme, setTheme, showLoader, handleLoaderComplete }) {
+function AppContent({ theme, toggleTheme, setTheme }) {
   const [activeVideo, setActiveVideo] = useState(null);
   const location = useLocation();
 
   // Scroll to hash element on load / route change
   useEffect(() => {
-    if (!showLoader && location.hash) {
+    if (location.hash) {
       const id = location.hash.replace('#', '');
       const timer = setTimeout(() => {
         const element = document.getElementById(id);
@@ -30,11 +29,11 @@ function AppContent({ theme, toggleTheme, setTheme, showLoader, handleLoaderComp
         }
       }, 200);
       return () => clearTimeout(timer);
-    } else if (!showLoader && !location.hash) {
+    } else {
       // scroll to top if navigating to another route without hash
       window.scrollTo(0, 0);
     }
-  }, [location, showLoader]);
+  }, [location]);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -48,10 +47,6 @@ function AppContent({ theme, toggleTheme, setTheme, showLoader, handleLoaderComp
       });
     }
   };
-
-  if (showLoader) {
-    return <CountdownLoader onComplete={handleLoaderComplete} />;
-  }
 
   return (
     <>
@@ -73,7 +68,7 @@ function AppContent({ theme, toggleTheme, setTheme, showLoader, handleLoaderComp
       <footer className="footer-v2">
         <div className="container footer-container-v2">
           <div className="footer-left-v2">
-            <span className="footer-logo-cursive-v2">𝓚𝓪𝓵𝓹𝓲𝓽 𝓕𝓲𝓵𝓶𝓼</span>
+            <span className="footer-logo-cursive-v2">KALPIT FILMS</span>
             <p className="footer-copy-v2">
               &copy; {new Date().getFullYear()} Kalpit Films. All Rights Reserved. Lazimpat Road, Kathmandu, Nepal.
             </p>
@@ -115,7 +110,6 @@ function AppContent({ theme, toggleTheme, setTheme, showLoader, handleLoaderComp
 }
 
 function App() {
-  const [showLoader, setShowLoader] = useState(true);
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
 
   useEffect(() => {
@@ -127,18 +121,12 @@ function App() {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
   };
 
-  const handleLoaderComplete = () => {
-    setShowLoader(false);
-  };
-
   return (
     <Router>
       <AppContent 
         theme={theme} 
         toggleTheme={toggleTheme} 
         setTheme={setTheme} 
-        showLoader={showLoader} 
-        handleLoaderComplete={handleLoaderComplete} 
       />
     </Router>
   );

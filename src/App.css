@@ -25,10 +25,12 @@
 }
 
 .footer-logo-cursive-v2 {
-  font-family: var(--font-script);
-  font-size: 2.2rem;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
 }
 
 .footer-copy-v2 {

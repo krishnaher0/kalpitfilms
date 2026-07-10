@@ -172,7 +172,7 @@
 .logo-cursive-v2 {
   font-family: var(--font-serif);
   font-size: 1.15rem;
-  font-weight: 400;
+  font-weight: 700;
   color: var(--accent-gold);
   text-shadow: 0 0 12px rgba(255, 215, 130, 0.25);
   white-space: nowrap;
