@@ -104,7 +104,8 @@ export default function About() {
         setFormState({ loading: false, success: 'Message sent — we will reply soon.', error: null });
         setForm({ name: '', email: '', message: '' });
       } else {
-        setFormState({ loading: false, success: null, error: data.error || 'Failed to send message.' });
+        const errorText = typeof data.error === 'object' ? JSON.stringify(data.error) : data.error;
+        setFormState({ loading: false, success: null, error: errorText || 'Failed to send message.' });
       }
     } catch (err) {
       setFormState({ loading: false, success: null, error: err.message || 'Network error' });

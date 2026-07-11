@@ -34,7 +34,8 @@ export default function Contact() {
         setSubmitted(true);
         setFormState({ name: '', email: '', message: '' });
       } else {
-        alert("Something went wrong: " + (data.error || "Please check that the secure email server is running."));
+        const errorText = typeof data.error === 'object' ? JSON.stringify(data.error) : data.error;
+        alert("Something went wrong: " + (errorText || "Please check that the secure email server is running."));
       }
     } catch (err) {
       console.error(err);
