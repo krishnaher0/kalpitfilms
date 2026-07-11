@@ -1,24 +1,29 @@
-import express from 'express';
-import cors from 'cors';
-import 'dotenv/config';
+export default async function handler(req, res) {
+  // CORS configuration
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
 
-const app = express();
-app.use(cors());
-app.use(express.json());
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
 
-const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const TARGET_EMAIL = "kalpitfilms@gmail.com";
+  if (req.method !== 'POST') {
+    return res.status(405).json({ success: false, error: 'Method not allowed' });
+  }
 
-if (!RESEND_API_KEY) {
-  console.warn("WARNING: RESEND_API_KEY is not defined in the environment (check .env file)!");
-}
-
-app.post('/api/send-email', async (req, res) => {
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
-    return res.status(400).json({ success: false, error: "Missing required fields" });
+    return res.status(400).json({ success: false, error: 'Missing required fields' });
   }
+
+  const RESEND_API_KEY = process.env.RESEND_API_KEY || "re_fe4zn1sJ_HNsQrGL1un6EPii5BXqKGDiU";
+  const TARGET_EMAIL = "kalpitfilms@gmail.com";
 
   try {
     const formattedDate = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kathmandu' });
@@ -29,7 +34,7 @@ app.post('/api/send-email', async (req, res) => {
         'Authorization': `Bearer ${RESEND_API_KEY}`
       },
       body: JSON.stringify({
-        from: 'onboarding@resend.dev', // Default sender domain for Resend sandbox accounts
+        from: 'onboarding@resend.dev',
         to: TARGET_EMAIL,
         subject: `New Inquiry from ${name} (Kalpit Films Website)`,
         html: `
@@ -104,17 +109,12 @@ app.post('/api/send-email', async (req, res) => {
     const data = await response.json();
 
     if (response.ok) {
-      res.status(200).json({ success: true, data });
+      return res.status(200).json({ success: true, data });
     } else {
-      res.status(response.status).json({ success: false, error: data });
+      return res.status(response.status).json({ success: false, error: data });
     }
   } catch (error) {
-    console.error("Email dispatch failed:", error);
-    res.status(500).json({ success: false, error: error.message });
+    console.error("Email API failed:", error);
+    return res.status(500).json({ success: false, error: error.message });
   }
-});
-
-const PORT = 5005;
-app.listen(PORT, () => {
-  console.log(`Secure Email Proxy Server is active on http://localhost:${PORT}`);
-});
+}

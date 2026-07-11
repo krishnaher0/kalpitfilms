@@ -248,7 +248,7 @@
 
 /* Light Theme overrides to display images naturally */
 [data-theme="light"] .slide-overlay-v2 {
-  background: rgba(255, 255, 255, 0.12);
+  background: transparent;
 }
 
 [data-theme="light"] .slide-title-v2 {

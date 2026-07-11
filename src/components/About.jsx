@@ -91,7 +91,10 @@ export default function About() {
 
     setFormState({ loading: true, success: null, error: null });
     try {
-      const resp = await fetch('http://localhost:5005/api/send-email', {
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const endpoint = isLocal ? "http://localhost:5005/api/send-email" : "/api/send-email";
+
+      const resp = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)

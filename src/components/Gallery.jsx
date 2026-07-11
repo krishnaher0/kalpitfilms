@@ -81,6 +81,126 @@ const galleryPhotos = [
     image: '/pictures/pic7.jpg',
     caption: 'Monsoon Light - Cinematic Contrast of Traditional Windows',
     category: 'pictures'
+  },
+  {
+    id: 18,
+    image: '/pictures/Chabahil Bus.JPG',
+    caption: 'Chabahil Transit - Vibrant Kathmandu Daily Commute & City Life Still',
+    category: 'pictures'
+  },
+  {
+    id: 19,
+    image: '/pictures/_MG_4088.jpg',
+    caption: 'Framed Perspective - Cinematic Portrait & Production Capture',
+    category: 'pictures'
+  },
+  {
+    id: 20,
+    image: '/pictures/FCC1DD78-931B-40F3-9A20-44C8696DA5B4.jpeg',
+    caption: 'Scenic Heights - High Altitude Expedition Frame',
+    category: 'pictures'
+  },
+  {
+    id: 21,
+    image: '/pictures/IMG_9490.jpeg',
+    caption: 'Highland Serenity - Visual Flow and Majestic Ridge Landscape',
+    category: 'pictures'
+  },
+  {
+    id: 22,
+    image: '/pictures/IMG_9776.jpeg',
+    caption: 'Sacred Carving Details - Heritage Architecture Close-up',
+    category: 'pictures'
+  },
+  {
+    id: 23,
+    image: '/pictures/IMG_3820.jpeg',
+    caption: 'Cinematic Vista - High-contrast Valley Silhouette Still',
+    category: 'pictures'
+  },
+  {
+    id: 24,
+    image: '/pictures/IMG_3822.jpeg',
+    caption: 'Atmospheric Light - Evening Glow on Traditional Settlement',
+    category: 'pictures'
+  },
+  {
+    id: 25,
+    image: '/pictures/IMG_3825.jpeg',
+    caption: 'Nepalese Heritage - Durbar Architecture Details',
+    category: 'pictures'
+  },
+  {
+    id: 26,
+    image: '/pictures/IMG_4133.jpeg',
+    caption: 'Behind the Scenes - Camera Crew and Direction Setup',
+    category: 'pictures'
+  },
+  {
+    id: 27,
+    image: '/pictures/IMG_4187.jpeg',
+    caption: 'Epic Mountain Scale - Snowy Himalayan Peak Capture',
+    category: 'pictures'
+  },
+  {
+    id: 28,
+    image: '/pictures/IMG_5534.jpeg',
+    caption: 'Traditional Living - Cultural Portrait of Nepal Life',
+    category: 'pictures'
+  },
+  {
+    id: 29,
+    image: '/pictures/IMG_5536.jpeg',
+    caption: 'Visual Mood - Rainy Day Alleyways of Kathmandu',
+    category: 'pictures'
+  },
+  {
+    id: 30,
+    image: '/pictures/IMG_6464.jpeg',
+    caption: 'Cinematic Portrait - Expressive Human Story Still',
+    category: 'pictures'
+  },
+  {
+    id: 31,
+    image: '/pictures/IMG_6715.jpeg',
+    caption: 'Mountain Ridge - Scenic Trekking Path & Valleys',
+    category: 'pictures'
+  },
+  {
+    id: 32,
+    image: '/pictures/IMG_6716.jpeg',
+    caption: 'Monsoon Green - Natural Landscape of Melamchi Valley',
+    category: 'pictures'
+  },
+  {
+    id: 33,
+    image: '/pictures/IMG_6718.jpeg',
+    caption: 'Golden Temple - Dusk Reflection on Sacred Pagoda',
+    category: 'pictures'
+  },
+  {
+    id: 34,
+    image: '/pictures/IMG_6781.jpeg',
+    caption: 'Scouting Location - Atmospheric Travel Capture',
+    category: 'pictures'
+  },
+  {
+    id: 35,
+    image: '/pictures/IMG_6804.jpeg',
+    caption: 'Cultural Rituals - Night Time Ceremony Sequence',
+    category: 'pictures'
+  },
+  {
+    id: 36,
+    image: '/pictures/IMG_7725.jpeg',
+    caption: 'Cinematic Frame - Focus on Traditional Wood Carvings',
+    category: 'pictures'
+  },
+  {
+    id: 37,
+    image: '/pictures/IMG_8563.JPG',
+    caption: 'BTS Stills - Camera Rigs and On-Set Production',
+    category: 'pictures'
   }
 ];
 

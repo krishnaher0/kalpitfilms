@@ -35,15 +35,14 @@
   margin: 18px auto 0;
 }
 
-/* Asymmetric 3-Column Grid */
+/* Symmetric 3-Column Grid */
 .offers-grid-v2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  grid-auto-flow: dense;
 }
 
-/* Grid Sizes */
+/* Grid Card Styles */
 .offer-card-v2 {
   position: relative;
   background-color: #121214;
@@ -53,24 +52,9 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  aspect-ratio: 4/5;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 1;
-}
-
-.offer-card-v2.grid-wide {
-  grid-column: span 2;
-  aspect-ratio: 16/9;
-}
-
-.offer-card-v2.grid-tall {
-  grid-column: span 1;
-  grid-row: span 2;
-  aspect-ratio: 4/5;
-}
-
-.offer-card-v2.grid-standard {
-  grid-column: span 1;
-  aspect-ratio: 4/5;
 }
 
 /* Card hover animations */
@@ -177,17 +161,7 @@
   .offers-grid-v2 {
     grid-template-columns: repeat(2, 1fr);
   }
-  .offer-card-v2.grid-wide {
-    grid-column: span 2;
-    aspect-ratio: 16/9;
-  }
-  .offer-card-v2.grid-tall {
-    grid-column: span 1;
-    grid-row: span 1;
-    aspect-ratio: 4/5;
-  }
-  .offer-card-v2.grid-standard {
-    grid-column: span 1;
+  .offer-card-v2 {
     aspect-ratio: 4/5;
   }
 }
@@ -203,11 +177,7 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  .offer-card-v2.grid-wide,
-  .offer-card-v2.grid-tall,
-  .offer-card-v2.grid-standard {
-    grid-column: span 1;
-    grid-row: span 1;
+  .offer-card-v2 {
     aspect-ratio: 4/3;
   }
   .offer-content-v2 {

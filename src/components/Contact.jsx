@@ -15,7 +15,10 @@ export default function Contact() {
     setSending(true);
 
     try {
-      const response = await fetch("http://localhost:5005/api/send-email", {
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const endpoint = isLocal ? "http://localhost:5005/api/send-email" : "/api/send-email";
+
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -86,7 +89,7 @@ export default function Contact() {
             <div className="socials-list-v2">
               <a href="https://facebook.com/kalpitfilms" target="_blank" rel="noopener noreferrer" className="social-txt-link-v2">Facebook</a>
               <a href="https://instagram.com/kalpitfilms" target="_blank" rel="noopener noreferrer" className="social-txt-link-v2">Instagram</a>
-              <a href="https://youtube.com/kalpitfilms" target="_blank" rel="noopener noreferrer" className="social-txt-link-v2">YouTube</a>
+              <a href="https://www.youtube.com/channel/UC97qR3wKYv0RH01p6dELTuQ" target="_blank" rel="noopener noreferrer" className="social-txt-link-v2">YouTube</a>
               <a href="https://vimeo.com" target="_blank" rel="noopener noreferrer" className="social-txt-link-v2">Vimeo</a>
               <a href="https://imdb.com" target="_blank" rel="noopener noreferrer" className="social-txt-link-v2">IMDb</a>
             </div>

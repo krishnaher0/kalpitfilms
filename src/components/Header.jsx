@@ -178,7 +178,7 @@ export default function Header({ theme, toggleTheme, setTheme }) {
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
             </svg>
           </a>
-          <a href="https://youtube.com/kalpitfilms" target="_blank" rel="noopener noreferrer" className="social-icon-v2 youtube" aria-label="YouTube">
+          <a href="https://www.youtube.com/channel/UC97qR3wKYv0RH01p6dELTuQ" target="_blank" rel="noopener noreferrer" className="social-icon-v2 youtube" aria-label="YouTube">
             <svg viewBox="0 0 24 24" fill="currentColor" className="social-svg-v2">
               <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.52 3.5 12 3.5 12 3.5s-7.52 0-9.388.553a3.003 3.003 0 0 0-2.11 2.11C0 8.03 0 12 0 12s0 3.97.553 5.837a3.003 3.003 0 0 0 2.11 2.11c1.867.553 9.388.553 9.388.553s7.52 0 9.388-.553a3.002 3.002 0 0 0 2.11-2.11C24 15.97 24 12 24 12s0-3.97-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
             </svg>

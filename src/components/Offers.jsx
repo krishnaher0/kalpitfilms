@@ -7,48 +7,42 @@ const offersData = [
     title: 'Ads Production',
     tag: 'Commercials',
     desc: 'High-impact advertising campaigns, brand commercials, and social-first video content.',
-    image: '/services/IMG_9443.jpeg',
-    sizeClass: 'grid-wide'
+    image: '/services/Screenshot 2026-07-10 at 20.37.07.png'
   },
   {
     id: 2,
     title: 'Film Production',
     tag: 'Feature Films',
     desc: 'End-to-end cinematic execution, screenplay design, film scouting, and full directors cut production.',
-    image: '/services/IMG_0739.JPG',
-    sizeClass: 'grid-tall'
+    image: '/services/IMG_0739.JPG'
   },
   {
     id: 3,
     title: 'Documentaries',
     tag: 'Non-Fiction',
     desc: 'Compelling real-world human stories, cultural exploration, and nature expeditions capturing reality.',
-    image: '/services/IMG_3453.jpeg',
-    sizeClass: 'grid-standard'
+    image: '/services/IMG_3453.jpeg'
   },
   {
     id: 4,
     title: 'Film Merchandising',
     tag: 'Branding',
     desc: 'Creative merchandising strategies, graphic design collections, and collector edition memorabilia.',
-    image: '/services/28.JPG',
-    sizeClass: 'grid-standard'
+    image: '/services/image_3b83c434.png'
   },
   {
     id: 5,
     title: 'Cinema Gear Rental',
     tag: 'Services',
     desc: 'High-end cinema rigs, anamorphic lens packages, drones, stabilizers, and full lighting equipment kits.',
-    image: '/services/Screenshot 2026-07-10 at 20.37.07.png',
-    sizeClass: 'grid-wide'
+    image: '/services/Screenshot 2026-07-10 at 20.35.07.png'
   },
   {
     id: 6,
     title: 'International Film Fixing',
     tag: 'Local Support',
     desc: 'Comprehensive fixing support in Nepal: government clearance, mountain logistics, permit acquisition, and Sherpa team coordination.',
-    image: '/services/Screenshot 2026-07-10 at 20.35.07.png',
-    sizeClass: 'grid-standard'
+    image: '/services/image_12e5f0c2.png'
   }
 ];
 
@@ -64,7 +58,7 @@ export default function Offers() {
 
         <div className="offers-grid-v2">
           {offersData.map((item) => (
-            <div key={item.id} className={`offer-card-v2 ${item.sizeClass}`}>
+            <div key={item.id} className="offer-card-v2">
               <div className="offer-image-wrapper-v2">
                 <img src={item.image} alt={item.title} className="offer-img-v2" />
                 <div className="offer-overlay-gradient-v2"></div>

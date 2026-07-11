@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './HeroSlider.css';
 
 const sliderSlides = [
-  { id: 1, title: 'KALPIT FILMS', subtitle: 'A new vision of cinematic storytelling.', image: '/pictures/934B0DB2-E42C-417A-8976-6066D1BAD0A0.jpeg', targetId: 'about' },
+  { id: 1, title: 'KALPIT FILMS', subtitle: 'A new vision of cinematic storytelling.', image: '/pictures/Chabahil Bus.JPG', targetId: 'about' },
   { id: 2, title: 'DISCOVER THE FRAME', subtitle: 'Bold visuals meet cinematic craft.', image: '/pictures/FCC1DD78-931B-40F3-9A20-44C8696DA5B4.jpeg', targetId: 'about' },
-  { id: 3, title: 'STILL MOMENTS', subtitle: 'Every shot tells the story of a film journey.', image: '/pictures/IMG_0615.JPG', targetId: 'about' },
+  { id: 3, title: 'STILL MOMENTS', subtitle: 'Every shot tells the story of a film journey.', image: '/pictures/_MG_4088.jpg', targetId: 'about' },
   { id: 4, title: 'CREATIVE MOTION', subtitle: 'A palette of light, landscape, and motion.', image: '/pictures/IMG_9490.jpeg', targetId: 'about' },
   { id: 5, title: 'CINEMATIC DEPTH', subtitle: 'We capture drama in every composition.', image: '/pictures/IMG_9776.jpeg', targetId: 'about' },
   { id: 6, title: 'VISION IN FOCUS', subtitle: 'Crafting cinematic stories with precision.', image: '/pictures/pic1.jpg', targetId: 'about' },
