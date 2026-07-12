@@ -34,7 +34,7 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${RESEND_API_KEY}`
       },
       body: JSON.stringify({
-        from: 'onboarding@resend.dev',
+        from: 'Kalpit Films Inquiry <contact@kalpitfilms.com>',
         to: TARGET_EMAIL,
         subject: `New Inquiry from ${name} (Kalpit Films Website)`,
         html: `

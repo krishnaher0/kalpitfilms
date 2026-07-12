@@ -29,7 +29,7 @@ app.post('/api/send-email', async (req, res) => {
         'Authorization': `Bearer ${RESEND_API_KEY}`
       },
       body: JSON.stringify({
-        from: 'onboarding@resend.dev', // Default sender domain for Resend sandbox accounts
+        from: 'Kalpit Films Inquiry <contact@kalpitfilms.com>', // Verified custom sender domain
         to: TARGET_EMAIL,
         subject: `New Inquiry from ${name} (Kalpit Films Website)`,
         html: `
