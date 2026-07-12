@@ -80,12 +80,7 @@ export default function HeroSlider({ scrollToSection }) {
               <div className="slide-content-v2">
                 <h1 className="slide-title-v2">{slide.title}</h1>
                 <p className="slide-subtitle-v2">{slide.subtitle}</p>
-                <button 
-                  className="btn-primary slide-btn-v2"
-                  onClick={() => scrollToSection(slide.targetId)}
-                >
-                  {slide.btnText}
-                </button>
+
               </div>
             </div>
           </div>
