@@ -78,7 +78,7 @@ export default function Contact() {
 
               <div className="details-item-v2">
                 <h4 className="details-lbl-v2">Production Desk</h4>
-                <p className="details-val-v2">kalpitfilms@gmail.com</p>
+                <p className="details-val-v2">contact@kalpitfilms.com</p>
               </div>
 
               <div className="details-item-v2">

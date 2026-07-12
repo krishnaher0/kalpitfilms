@@ -205,7 +205,7 @@ export default function About() {
               <div className="contact-meta-v2">
                 <div className="contact-meta-item-v2">
                   <strong>Email</strong>
-                  <span>kalpitfilms@gmail.com</span>
+                  <span>contact@kalpitfilms.com</span>
                 </div>
                 <div className="contact-meta-item-v2">
                   <strong>Phone</strong>
