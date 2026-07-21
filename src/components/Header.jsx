@@ -160,7 +160,7 @@ export default function Header({ theme, toggleTheme, setTheme }) {
       </header>
 
       <div className="social-menu-right-v2">
-        <a href="https://facebook.com/kalpitfilms" target="_blank" rel="noopener noreferrer" className="social-icon-v2 facebook" aria-label="Facebook">
+        <a href="https://www.facebook.com/profile.php?id=61568543475592" target="_blank" rel="noopener noreferrer" className="social-icon-v2 facebook" aria-label="Facebook">
           <svg viewBox="0 0 24 24" fill="currentColor" className="social-svg-v2">
             <path d="M9 8H7v3h2v9h4v-9h3.6l.4-3H13V6c0-.5.5-1 1-1h3V1h-4c-3.3 0-5 1.7-5 5v2z" />
           </svg>

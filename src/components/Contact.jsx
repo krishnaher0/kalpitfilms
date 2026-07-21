@@ -88,7 +88,7 @@ export default function Contact() {
             </div>
 
             <div className="socials-list-v2">
-              <a href="https://facebook.com/kalpitfilms" target="_blank" rel="noopener noreferrer" className="social-txt-link-v2">Facebook</a>
+              <a href="https://www.facebook.com/profile.php?id=61568543475592" target="_blank" rel="noopener noreferrer" className="social-txt-link-v2">Facebook</a>
               <a href="https://instagram.com/kalpitfilms" target="_blank" rel="noopener noreferrer" className="social-txt-link-v2">Instagram</a>
               <a href="https://www.youtube.com/channel/UC97qR3wKYv0RH01p6dELTuQ" target="_blank" rel="noopener noreferrer" className="social-txt-link-v2">YouTube</a>
               <a href="https://vimeo.com" target="_blank" rel="noopener noreferrer" className="social-txt-link-v2">Vimeo</a>
