@@ -60,7 +60,7 @@ export default function Offers() {
           {offersData.map((item) => (
             <div key={item.id} className="offer-card-v2">
               <div className="offer-image-wrapper-v2">
-                <img src={item.image} alt={item.title} className="offer-img-v2" />
+                <img src={item.image} alt={`${item.title} - Kalpit Films Production Service`} loading="lazy" decoding="async" className="offer-img-v2" />
                 <div className="offer-overlay-gradient-v2"></div>
               </div>
               <div className="offer-content-v2">

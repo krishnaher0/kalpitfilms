@@ -251,7 +251,7 @@ export default function Gallery() {
               className="gallery-item-v2 animate-fade-in"
               onClick={() => setActivePhoto(photo)}
             >
-              <img src={photo.image} alt={photo.caption} className="gallery-img-v2" />
+              <img src={photo.image} alt={photo.caption} loading="lazy" decoding="async" className="gallery-img-v2" />
               <div className="gallery-item-overlay-v2">
                 <span className="gallery-zoom-icon-v2">&#65291;</span>
                 <p className="gallery-item-caption-v2">{photo.caption}</p>

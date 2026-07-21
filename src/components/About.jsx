@@ -174,7 +174,9 @@ export default function About() {
           <div className="director-image-wrapper-v2">
             <img 
               src="/team/amit.jpg" 
-              alt="Director Portrait" 
+              alt="Amit Pokhrel - Founder and CEO of Kalpit Films" 
+              loading="lazy"
+              decoding="async"
               className="director-img-v2" 
             />
             <div className="director-overlay-v2"></div>

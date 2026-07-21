@@ -71,7 +71,14 @@ export default function HeroSlider({ scrollToSection }) {
                   poster={slide.image}
                 />
               ) : (
-                <img src={slide.image} alt={slide.title} className="slide-image-v2" />
+                <img 
+                  src={slide.image} 
+                  alt={`${slide.title} - ${slide.subtitle} | Kalpit Films`} 
+                  fetchPriority={index === 0 ? 'high' : 'auto'}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  className="slide-image-v2" 
+                />
               )}
               <div className="slide-overlay-v2"></div>
             </div>
