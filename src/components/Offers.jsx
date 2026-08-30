@@ -50,7 +50,7 @@ const offersData = [
     title: 'Events & Concerts',
     tag: 'Live Events, Produced Like a Production.',
     desc: 'We organize and produce concerts, festivals, and brand and cultural events — applying full production discipline to a format with no second take..',
-    image: 'https://images.unsplash.com/photo-1540039155732-d6741b687c9a?w=600&h=400&fit=crop'
+    image: '/services/events.jpg'
   },
   {
     id: 7,
@@ -58,7 +58,7 @@ const offersData = [
     title: 'Equipment',
     tag: 'The Right Gear. Ready When You Are.',
     desc: 'We rent professional cinema camera, lenses, lighting, grip, and sound equipment, with the option of experienced operators alongside the gear.',
-    image: 'https://images.unsplash.com/photo-1527011045974-4d8cc384358a?w=600&h=400&fit=crop'
+    image: '/services/equipment.jpg'
   },
   {
     id: 8,
