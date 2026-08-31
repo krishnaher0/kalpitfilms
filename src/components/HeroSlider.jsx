@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import './HeroSlider.css';
 
 const sliderSlides = [
-  { id: 1, title: 'KALPIT FILMS', subtitle: 'A new vision of cinematic storytelling.', image: '/pictures/Chabahil Bus.JPG', targetId: 'about' },
-  { id: 2, title: 'DISCOVER THE FRAME', subtitle: 'Bold visuals meet cinematic craft.', image: '/pictures/FCC1DD78-931B-40F3-9A20-44C8696DA5B4.jpeg', targetId: 'about' },
-  { id: 3, title: 'STILL MOMENTS', subtitle: 'Every shot tells the story of a film journey.', image: '/pictures/_MG_4088.jpg', targetId: 'about' },
-  { id: 4, title: 'CREATIVE MOTION', subtitle: 'A palette of light, landscape, and motion.', image: '/pictures/IMG_9490.jpeg', targetId: 'about' },
-  { id: 5, title: 'CINEMATIC DEPTH', subtitle: 'We capture drama in every composition.', image: '/pictures/IMG_9776.jpeg', targetId: 'about' },
-  { id: 6, title: 'VISION IN FOCUS', subtitle: 'Crafting cinematic stories with precision.', image: '/pictures/pic1.jpg', targetId: 'about' },
-  { id: 7, title: 'STORY ARCHITECTURE', subtitle: 'Building narrative through visual design.', image: '/pictures/pic2.jpg', targetId: 'about' },
-  { id: 8, title: 'MOOD AND TEXTURE', subtitle: 'A visual language for every scene.', image: '/pictures/pic3.jpg', targetId: 'about' },
-  { id: 9, title: 'FRAMEWORK', subtitle: 'Images that speak to your brand voice.', image: '/pictures/pic4.jpg', targetId: 'about' },
-  { id: 10, title: 'EMOTIONAL PERSPECTIVE', subtitle: 'Still frames with cinematic emotion.', image: '/pictures/pic5.jpg', targetId: 'about' },
-  { id: 11, title: 'IMMERSE THE AUDIENCE', subtitle: 'Powerful visuals for every project.', image: '/pictures/pic6.jpg', targetId: 'about' },
-  { id: 12, title: 'BOLD EXPRESSION', subtitle: 'Epic shots from the Kalpit Films archive.', image: '/pictures/pic7.jpg', targetId: 'about' }
+  { id: 1, title: 'KALPIT FILMS', subtitle: 'I dream in 24 FPS.', image: '/pictures/Chabahil Bus.JPG', targetId: 'about' },
+  { id: 2, title: 'DISCOVER THE FRAME', subtitle: 'Cinema, composed one frame at a time.', image: '/pictures/FCC1DD78-931B-40F3-9A20-44C8696DA5B4.jpeg', targetId: 'about' },
+  { id: 3, title: 'STILL MOMENTS', subtitle: 'A single frame can hold an entire journey.', image: '/pictures/_MG_4088.jpg', targetId: 'about' },
+  { id: 4, title: 'CREATIVE MOTION', subtitle: 'Light and landscape, in constant motion.', image: '/pictures/IMG_9490.jpeg', targetId: 'about' },
+  { id: 5, title: 'CINEMATIC DEPTH', subtitle: 'Drama lives in every composition.', image: '/pictures/IMG_9776.jpeg', targetId: 'about' },
+  { id: 6, title: 'VISION IN FOCUS', subtitle: 'Precision behind every shot, passion behind every story.', image: '/pictures/pic1.jpg', targetId: 'about' },
+  { id: 7, title: 'STORY ARCHITECTURE', subtitle: 'We build stories the way architects build spaces.', image: '/pictures/pic2.jpg', targetId: 'about' },
+  { id: 8, title: 'MOOD AND TEXTURE', subtitle: 'Every scene has its own language — we speak it fluently.', image: '/pictures/pic3.jpg', targetId: 'about' },
+  { id: 9, title: 'FRAMEWORK', subtitle: 'Your brand, framed in cinematic voice.', image: '/pictures/pic4.jpg', targetId: 'about' },
+  { id: 10, title: 'EMOTIONAL PERSPECTIVE', subtitle: 'Stillness that speaks louder than motion.', image: '/pictures/pic5.jpg', targetId: 'about' },
+  { id: 11, title: 'IMMERSE THE AUDIENCE', subtitle: 'Every project, an experience worth stepping into.', image: '/pictures/pic6.jpg', targetId: 'about' },
+  { id: 12, title: 'BOLD EXPRESSION', subtitle: 'Epic isn’t a genre — it’s how we shoot.', image: '/pictures/pic7.jpg', targetId: 'about' }
 ];
 
 export default function HeroSlider({ scrollToSection }) {
