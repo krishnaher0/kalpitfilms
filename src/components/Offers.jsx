@@ -54,7 +54,7 @@ const offersData = [
   },
   {
     id: 7,
-    slug: 'equipment-postproduction',
+    slug: 'equipment-rental',
     title: 'Equipment',
     tag: 'The Right Gear. Ready When You Are.',
     desc: 'We rent professional cinema camera, lenses, lighting, grip, and sound equipment, with the option of experienced operators alongside the gear.',
@@ -94,7 +94,7 @@ const offersData = [
   },
   {
     id: 12,
-    slug: 'creative-collaborations',
+    slug: 'casting-talent',
     title: 'Casting & Talent',
     tag: 'Faces That Belong to the Story.',
     desc: 'We provide casting for productions of every kind — from professional actors to authentic, non-professional faces found directly in the communities a story is set in.',
@@ -110,7 +110,7 @@ const offersData = [
   },
   {
     id: 14,
-    slug: 'events-theatre-live',
+    slug: 'theatre-performance',
     title: 'Theatre & Performance',
     tag: 'A Stage for Every Story.',
     desc: 'We produce theatre on stage and in public space — direction, staging, and performer coordination for formal productions, and street theatre built to reach audiences wherever they already are.',
@@ -118,7 +118,7 @@ const offersData = [
   },
   {
     id: 15,
-    slug: 'creative-collaborations',
+    slug: 'social-impact-awareness',
     title: 'Social Impact & Awareness',
     tag: 'Stories That Are Meant to Change Something',
     desc: 'We produce content and live programming for organizations working to change minds, behavior, or policy — built for genuine reach, not just polish..',

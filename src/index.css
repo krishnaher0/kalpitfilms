@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap');
 
 :root {
-  --bg-primary: #ffffff;
+  --bg-primary: #FAF9F6;
   --bg-secondary: #f3f5f9;       /* Soft Slate-Blue White */
   --bg-tertiary: #e2e8f0;        /* Divider slate grey */
   --bg-dark-accent: #0a1128;     /* Rich Midnight Navy */
   --text-primary: #0f172a;       /* Deep Navy/Charcoal */
   --text-secondary: #475569;     /* Slate Grey */
   --text-muted: #64748b;         /* Muted Slate */
-  --accent-gold: #c5a880;        /* Luxury Champagne Gold */
-  --accent-gold-hover: #b0936c;
-  --accent-gold-glow: rgba(197, 168, 128, 0.08);
+  --accent-gold: #d4b07a;        /* Richer cinematic gold for stronger contrast */
+  --accent-gold-hover: #c69f63;
+  --accent-gold-glow: rgba(212, 176, 122, 0.18);
   --border-color: rgba(15, 23, 42, 0.08);
   --border-color-hover: rgba(15, 23, 42, 0.18);
   
@@ -215,7 +215,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-subtitle {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 1.35rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--accent-gold);

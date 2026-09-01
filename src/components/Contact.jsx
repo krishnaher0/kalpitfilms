@@ -5,6 +5,12 @@ export default function Contact() {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
+    phone: '',
+    category: 'hiring',
+    projectType: '',
+    description: '',
+    timeline: '',
+    budget: '',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
@@ -26,13 +32,19 @@ export default function Contact() {
         body: JSON.stringify({
           name: formState.name,
           email: formState.email,
+          phone: formState.phone,
+          category: formState.category,
+          projectType: formState.projectType,
+          description: formState.description,
+          timeline: formState.timeline,
+          budget: formState.budget,
           message: formState.message
         })
       });
       const data = await response.json();
       if (data.success) {
         setSubmitted(true);
-        setFormState({ name: '', email: '', message: '' });
+        setFormState({ name: '', email: '', phone: '', category: 'hiring', projectType: '', description: '', timeline: '', budget: '', message: '' });
       } else {
         const errorText = typeof data.error === 'object' ? JSON.stringify(data.error) : data.error;
         alert("Something went wrong: " + (errorText || "Please check that the secure email server is running."));
@@ -65,10 +77,12 @@ export default function Contact() {
         <div className="contact-grid-v2">
           {/* Left Column: Details */}
           <div className="contact-info-v2">
-            <h3 className="contact-heading-v2">Get in Touch</h3>
-            <p className="contact-desc-v2">
-              For script submissions, co-productions, fixer bookings, or general information, please use our contact details or submit an inquiry form.
-            </p>
+            <h3 className="contact-heading-v2">Start a Project</h3>
+            <div className="contact-desc-block-v2">
+              <p className="contact-desc-v2">
+                Whether you need a production partner or want to collaborate on something we're building, this is where it starts. Tell us what you're making, your timeline, and where you're based, and we'll follow up directly. International teams: share your shoot dates early — permits and locations in Nepal need lead time. Looking to collaborate, invest, or join a Kalpit Films production instead? Let us know that too — we'll route it to the right person.
+              </p>
+            </div>
 
             <div className="details-list-v2">
               <div className="details-item-v2">
@@ -110,7 +124,7 @@ export default function Contact() {
             ) : (
               <form onSubmit={handleSubmit} className="form-el-v2">
                 <div className="form-group-v2">
-                  <label htmlFor="name" className="form-label-v2">Full Name</label>
+                  <label htmlFor="name" className="form-label-v2">Name / Company</label>
                   <input 
                     type="text" 
                     id="name" 
@@ -124,7 +138,7 @@ export default function Contact() {
                 </div>
 
                 <div className="form-group-v2">
-                  <label htmlFor="email" className="form-label-v2">Email Address</label>
+                  <label htmlFor="email" className="form-label-v2">Email </label>
                   <input 
                     type="email" 
                     id="email" 
@@ -136,6 +150,129 @@ export default function Contact() {
                     placeholder="name@company.com"
                   />
                 </div>
+                <div className="form-group-v2">
+                  <label htmlFor="phone" className="form-label-v2">Phone / WhatsApp</label>
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    className="form-input-v2" 
+                    required 
+                    value={formState.phone}
+                    onChange={handleChange}
+                    placeholder="+977 98XXXXXXXX"
+                  />
+                </div>
+
+                <div className="form-group-v2">
+                  <label className="form-label-v2">What brings you here?</label>
+                  <div className="radio-group-v2">
+                    <div className="radio-item-v2">
+                      <input 
+                        type="radio" 
+                        id="hiring" 
+                        name="category" 
+                        value="hiring" 
+                        checked={formState.category === 'hiring'}
+                        onChange={handleChange}
+                        className="radio-input-v2"
+                      />
+                      <label htmlFor="hiring" className="radio-label-v2">Hiring Kalpit Films</label>
+                    </div>
+                    <div className="radio-item-v2">
+                      <input 
+                        type="radio" 
+                        id="collaborating" 
+                        name="category" 
+                        value="collaborating" 
+                        checked={formState.category === 'collaborating'}
+                        onChange={handleChange}
+                        className="radio-input-v2"
+                      />
+                      <label htmlFor="collaborating" className="radio-label-v2">Collaborating on a Kalpit Films project</label>
+                    </div>
+                    <div className="radio-item-v2">
+                      <input 
+                        type="radio" 
+                        id="investment" 
+                        name="category" 
+                        value="investment" 
+                        checked={formState.category === 'investment'}
+                        onChange={handleChange}
+                        className="radio-input-v2"
+                      />
+                      <label htmlFor="investment" className="radio-label-v2">Investment or Partnership</label>
+                    </div>
+                    <div className="radio-item-v2">
+                      <input 
+                        type="radio" 
+                        id="joining" 
+                        name="category" 
+                        value="joining" 
+                        checked={formState.category === 'joining'}
+                        onChange={handleChange}
+                        className="radio-input-v2"
+                      />
+                      <label htmlFor="joining" className="radio-label-v2">Joining as Cast or Crew</label>
+                    </div>
+                  </div>
+                </div>
+
+                {formState.category === 'hiring' && (
+                  <>
+                    <div className="form-group-v2">
+                      <label htmlFor="projectType" className="form-label-v2">Project Type</label>
+                      <input 
+                        type="text" 
+                        id="projectType" 
+                        name="projectType" 
+                        className="form-input-v2" 
+                        value={formState.projectType}
+                        onChange={handleChange}
+                        placeholder="e.g., Film, Commercial, Documentary, Music Video, etc."
+                      />
+                    </div>
+
+                    <div className="form-group-v2">
+                      <label htmlFor="description" className="form-label-v2">Description</label>
+                      <textarea 
+                        id="description" 
+                        name="description" 
+                        rows="3" 
+                        className="form-textarea-v2" 
+                        value={formState.description}
+                        onChange={handleChange}
+                        placeholder="Brief description of your project..."
+                      ></textarea>
+                    </div>
+
+                    <div className="form-group-v2">
+                      <label htmlFor="timeline" className="form-label-v2">Timeline</label>
+                      <input 
+                        type="text" 
+                        id="timeline" 
+                        name="timeline" 
+                        className="form-input-v2" 
+                        value={formState.timeline}
+                        onChange={handleChange}
+                        placeholder="e.g., 3 months, Q1 2025, Flexible, etc."
+                      />
+                    </div>
+
+                    <div className="form-group-v2">
+                      <label htmlFor="budget" className="form-label-v2">Budget (optional)</label>
+                      <input 
+                        type="text" 
+                        id="budget" 
+                        name="budget" 
+                        className="form-input-v2" 
+                        value={formState.budget}
+                        onChange={handleChange}
+                        placeholder="e.g., 500k - 1M NPR, To be discussed, etc."
+                      />
+                    </div>
+                  </>
+                )}
 
                 <div className="form-group-v2">
                   <label htmlFor="message" className="form-label-v2">Message / Narrative Scope</label>

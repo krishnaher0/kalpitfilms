@@ -20,13 +20,20 @@
   margin-bottom: 20px;
 }
 
+.contact-desc-block-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
 .contact-desc-v2 {
   font-family: var(--font-sans);
   color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.6;
   font-weight: 300;
-  margin-bottom: 36px;
+  margin: 0;
 }
 
 .details-list-v2 {
@@ -194,6 +201,41 @@
   max-width: 360px;
   margin-bottom: 32px;
   font-weight: 300;
+}
+
+/* Radio Button Group */
+.radio-group-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.radio-item-v2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.radio-input-v2 {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+.radio-label-v2 {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-weight: 300;
+  user-select: none;
+}
+
+.radio-input-v2:hover {
+  opacity: 0.8;
 }
 
 @media (max-width: 1024px) {

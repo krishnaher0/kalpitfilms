@@ -6,25 +6,54 @@ const capabilities = [
     id: 1,
     title: 'Preproduction',
     desc: 'Script analysis, location scouting, budget allocations, casting calls, and conceptual storyboards.',
-    bgImage: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=800&auto=format&fit=crop'
+    bgImage: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=800&auto=format&fit=crop',
+    intro: '',
+    bodyCopy: [],
+    keyCapabilities: [],
+    whyChooseUs: []
   },
   {
     id: 2,
     title: 'Filming & Documentaries',
     desc: 'High-contrast landscape recording, documentaries, and full scale cinema shoots using high-end lens rigs.',
-    bgImage: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=800&auto=format&fit=crop'
+    bgImage: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=800&auto=format&fit=crop',
+    intro: 'We produce feature and short films — some entirely our own, others in collaboration with Nepali and international filmmakers — at any stage from script development through to distribution and release.',
+    bodyCopy: [
+      'Kalpit Films works both sides of the camera. We develop and produce our own feature and short film projects, and we partner with other filmmakers and production companies who need a collaborator at a specific stage — writing, financing conversations, casting, the shoot itself, post, or getting a finished film in front of an audience.',
+      'For Nepali filmmakers, that means a partner who can join wherever you already are, without forcing you to restart your process around ours. For international productions, it means a team that understands Nepal\'s terrain, permissions, and crew realities well enough to make a shooting schedule survive contact with the country it\'s set in — whether we\'re producing alongside you or handling production on our own project you\'re investing in or co-producing.'
+    ],
+    keyCapabilities: [
+      'Feature, short, independent & experimental film production — in-house and collaborative',
+      'Script and story development through to a shoot-ready project',
+      'International co-production support',
+      'Line production & full production management',
+      'On-set coordination · crew, cast, and location assembly',
+      'Distribution and release support'
+    ],
+    whyChooseUs: [
+      'Comfortable producing our own work and collaborating on someone else\'s, at any stage from script to release',
+      'One partner across the full chain — no handoff between development, production, and distribution'
+    ]
   },
   {
     id: 3,
     title: 'Production Management',
     desc: 'Managing logistics, securing local fixers, obtaining government filming permissions, and drone coordination.',
-    bgImage: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=800&auto=format&fit=crop'
+    bgImage: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=800&auto=format&fit=crop',
+    intro: '',
+    bodyCopy: [],
+    keyCapabilities: [],
+    whyChooseUs: []
   },
   {
     id: 4,
     title: 'Postproduction & Grading',
     desc: 'Offline video edits, foley and sound design, HDR color tuning, and visual effects integration.',
-    bgImage: 'https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=800&auto=format&fit=crop'
+    bgImage: 'https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=800&auto=format&fit=crop',
+    intro: '',
+    bodyCopy: [],
+    keyCapabilities: [],
+    whyChooseUs: []
   }
 ];
 
@@ -63,7 +92,7 @@ const teamMembers = [
 
 export default function About() {
   const [activeCap, setActiveCap] = React.useState(null);
-  const [form, setForm] = React.useState({ name: '', email: '', message: '' });
+  const [form, setForm] = React.useState({ name: '', email: '', phone: '', category: 'hiring', projectType: '', description: '', timeline: '', budget: '', message: '' });
   const [formState, setFormState] = React.useState({ loading: false, success: null, error: null });
 
   const validateEmail = (email) => {
@@ -97,12 +126,22 @@ export default function About() {
       const resp = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          category: form.category,
+          projectType: form.projectType,
+          description: form.description,
+          timeline: form.timeline,
+          budget: form.budget,
+          message: form.message
+        })
       });
       const data = await resp.json();
       if (resp.ok) {
-        setFormState({ loading: false, success: 'Message sent — we will reply soon.', error: null });
-        setForm({ name: '', email: '', message: '' });
+        setFormState({ loading: false, success: 'Message sent. We will reply soon.', error: null });
+        setForm({ name: '', email: '', phone: '', category: 'hiring', projectType: '', description: '', timeline: '', budget: '', message: '' });
       } else {
         const errorText = typeof data.error === 'object' ? JSON.stringify(data.error) : data.error;
         setFormState({ loading: false, success: null, error: errorText || 'Failed to send message.' });
@@ -118,12 +157,78 @@ export default function About() {
         
         {/* Title */}
         <div className="section-title-wrapper">
-          <span className="section-subtitle">Our Studio</span>
-          <h2 className="section-title">About Kalpit Films</h2>
+         
+          <h2 className="section-title">About </h2>
+        </div>
+
+        <div className="about-single-story-panel-v2">
+          <span className="section-subtitle">Who We Are</span>
+          <h3 className="about-subheading-v2">Kalpit Films</h3>
+
+          <div className="about-single-copy-v2">
+            <p>
+              Kalpit Films is a Kathmandu-based production house working across film, documentary, advertising, music, theatre, and live events.
+              Founded in 2025 by Amit Pokhrel and Kushal Pokhrel — Amit bringing close to a decade of experience as a screenwriter, filmmaker,
+              and director, and Kushal bringing over five years of experience as a screenwriter, filmmaker, actor, and producer — we were built to
+              close a gap we kept encountering ourselves: the distance between a strong creative idea and the unglamorous production work required to
+              actually get it made in Nepal.
+            </p>
+
+            <p>
+              A good idea deserves a production process that doesn't compromise it. That belief is why we didn't build a company around one discipline —
+              a film unit, or an ad agency, or an equipment shop — but around the full chain a creative project actually travels through: development,
+              casting, locations, crew, production, and post. Treating these as one connected practice, rather than outsourced fragments, is how a
+              project keeps its original intention intact from the first draft to the final export.
+            </p>
+          </div>
+
+          <div className="about-single-grid-v2">
+            <div className="about-single-grid-item-v2">
+              <span className="-subtitle">Why We Work Across Multiple Disciplines</span>
+              <p>
+                Film, advertising, music, theatre, and events look like different industries from the outside. From inside a production, they share
+                almost everything: a script or a concept, a cast, a crew, a location, a schedule, a technical department, and an audience waiting on the
+                other end. Once you've built the infrastructure to do one well, extending it across the others is a matter of specialists, not a different company.
+              </p>
+            </div>
+
+            <div className="about-single-grid-item-v2">
+              <span className="section-subtitle">Our Production Philosophy</span>
+              <p>
+                Plan for the country as it is, not as it looks in a photograph. Solve problems before the shoot day, not during it. Keep one point of
+                accountability, no matter how many specialists a project requires.
+              </p>
+            </div>
+
+            <div className="about-single-grid-item-v2">
+              <span className="section-subtitle">Our Understanding of Nepal</span>
+              <p>
+                We don't think of Nepal as a backdrop. It's a country with real terrain, real bureaucracy, real seasons, and real communities who live in
+                the places productions want to film. Understanding that — not just knowing which valley looks good on camera — is what separates a
+                production partner from a location fixer.
+              </p>
+            </div>
+
+            <div className="about-single-grid-item-v2">
+              <span className="section-subtitle">Why Choose Us</span>
+              <ul className="about-bullets-v2">
+                <li>A single team spanning creative development and production logistics.</li>
+                <li>Deep, current knowledge of Nepal's terrain, regulation, and culture.</li>
+                <li>A flexible specialist network rather than a fixed, limited in-house team.</li>
+                <li>Proven comfort working with both Nepali and international clients.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="about-single-quote-v2">
+            
+          </div>
         </div>
 
         {/* 1. What We Do Section - Calibrated list layout */}
         <div className="capabilities-section-v2">
+          <h3 className="about-subheading-v2">Story, People, Production, Culture, Execution</h3>
+          <br height="20"></br>
           <h3 className="about-subheading-v2">Collaborate with us</h3>
           <div className="capabilities-grid-v2">
             {capabilities.map((cap) => (
@@ -159,9 +264,44 @@ export default function About() {
                 <span className="capability-modal-number">0{activeCap.id}</span>
                 <h3 className="capability-modal-title">{activeCap.title}</h3>
                 <p className="capability-modal-desc">{activeCap.desc}</p>
-                <div className="capability-modal-additional-details">
-                  <p>Our dedicated crew manages all workflows from concept validation, location logistics, permits, drone certifications, through cinematic cinematography and high-fidelity postproduction. We bring a tailored workflow to turn scripts into award-winning silver screen masterpieces.</p>
-                </div>
+                
+                {activeCap.intro && (
+                  <div className="capability-modal-section">
+                    <h4 className="capability-modal-section-title">Intro</h4>
+                    <p className="capability-modal-section-text">{activeCap.intro}</p>
+                  </div>
+                )}
+
+                {activeCap.bodyCopy.length > 0 && (
+                  <div className="capability-modal-section">
+                    <h4 className="capability-modal-section-title">About</h4>
+                    {activeCap.bodyCopy.map((para, idx) => (
+                      <p key={idx} className="capability-modal-section-text">{para}</p>
+                    ))}
+                  </div>
+                )}
+
+                {activeCap.keyCapabilities.length > 0 && (
+                  <div className="capability-modal-section">
+                    <h4 className="capability-modal-section-title">Key Capabilities</h4>
+                    <ul className="capability-modal-bullets">
+                      {activeCap.keyCapabilities.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {activeCap.whyChooseUs.length > 0 && (
+                  <div className="capability-modal-section">
+                    <h4 className="capability-modal-section-title">Why Choose Us</h4>
+                    <ul className="capability-modal-bullets">
+                      {activeCap.whyChooseUs.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -200,22 +340,21 @@ export default function About() {
           <div className="contact-inner-grid-v2">
             <div className="contact-details-panel-v2">
               <span className="section-subtitle">Reach Us</span>
-              <h3 className="about-subheading-v2">Contact the Studio</h3>
+              <h3 className="about-subheading-v2">Let's Talk About What We're Making</h3>
               <p className="contact-blurb-v2">
-                For film inquiries, script development, production partnerships, or location scouting support, send us a message and our team will respond promptly.
-              </p>
-              <div className="contact-meta-v2">
+Whether you need a production partner or want to collaborate on something we're building — this is where it starts.<br></br><br></br>Tell us what you're making, your timeline, and where you're based, and we'll follow up directly. International teams: share your shoot dates early — permits and locations in Nepal need lead time. Looking to collaborate, invest, or join a Kalpit Films production instead? Let us know that too — we'll route it to the right person.</p>           
+   <div className="contact-meta-v2">
                 <div className="contact-meta-item-v2">
                   <strong>Email</strong>
                   <span>contact@kalpitfilms.com</span>
                 </div>
                 <div className="contact-meta-item-v2">
                   <strong>Phone</strong>
-                  <span>+977 9846967698</span>
+                  <span>+977 9860671040</span>
                 </div>
                 <div className="contact-meta-item-v2">
                   <strong>Studio</strong>
-                  <span>Lazimpat Road, Kathmandu</span>
+                  <span>Kupandole Road, Lalitpur</span>
                 </div>
               </div>
             </div>
@@ -229,6 +368,54 @@ export default function About() {
                   <label htmlFor="about-email" className="form-label-v2">Email Address</label>
                   <input id="about-email" name="email" type="email" className="form-input-v2" placeholder="name@company.com" value={form.email} onChange={handleInput} />
                 </div>
+                <div className="form-group-v2">
+                  <label htmlFor="about-phone" className="form-label-v2">Phone / WhatsApp</label>
+                  <input id="about-phone" name="phone" type="tel" className="form-input-v2" placeholder="+977 98XXXXXXXX" value={form.phone} onChange={handleInput} />
+                </div>
+
+                <div className="form-group-v2">
+                  <label className="form-label-v2">What brings you here?</label>
+                  <div className="radio-group-v2">
+                    <div className="radio-item-v2">
+                      <input type="radio" id="about-hiring" name="category" value="hiring" checked={form.category === 'hiring'} onChange={handleInput} className="radio-input-v2" />
+                      <label htmlFor="about-hiring" className="radio-label-v2">Hiring Kalpit Films</label>
+                    </div>
+                    <div className="radio-item-v2">
+                      <input type="radio" id="about-collaborating" name="category" value="collaborating" checked={form.category === 'collaborating'} onChange={handleInput} className="radio-input-v2" />
+                      <label htmlFor="about-collaborating" className="radio-label-v2">Collaborating on a Kalpit Films project</label>
+                    </div>
+                    <div className="radio-item-v2">
+                      <input type="radio" id="about-investment" name="category" value="investment" checked={form.category === 'investment'} onChange={handleInput} className="radio-input-v2" />
+                      <label htmlFor="about-investment" className="radio-label-v2">Investment or Partnership</label>
+                    </div>
+                    <div className="radio-item-v2">
+                      <input type="radio" id="about-joining" name="category" value="joining" checked={form.category === 'joining'} onChange={handleInput} className="radio-input-v2" />
+                      <label htmlFor="about-joining" className="radio-label-v2">Joining as Cast or Crew</label>
+                    </div>
+                  </div>
+                </div>
+
+                {form.category === 'hiring' && (
+                  <>
+                    <div className="form-group-v2">
+                      <label htmlFor="about-projectType" className="form-label-v2">Project Type</label>
+                      <input id="about-projectType" name="projectType" type="text" className="form-input-v2" placeholder="e.g., Film, Commercial, Documentary, Music Video" value={form.projectType} onChange={handleInput} />
+                    </div>
+                    <div className="form-group-v2">
+                      <label htmlFor="about-description" className="form-label-v2">Description</label>
+                      <textarea id="about-description" name="description" rows="3" className="form-textarea-v2" placeholder="Brief description of your project..." value={form.description} onChange={handleInput}></textarea>
+                    </div>
+                    <div className="form-group-v2">
+                      <label htmlFor="about-timeline" className="form-label-v2">Timeline</label>
+                      <input id="about-timeline" name="timeline" type="text" className="form-input-v2" placeholder="e.g., 3 months, Q1 2025, Flexible" value={form.timeline} onChange={handleInput} />
+                    </div>
+                    <div className="form-group-v2">
+                      <label htmlFor="about-budget" className="form-label-v2">Budget (optional)</label>
+                      <input id="about-budget" name="budget" type="text" className="form-input-v2" placeholder="e.g., 500k - 1M NPR, To be discussed" value={form.budget} onChange={handleInput} />
+                    </div>
+                  </>
+                )}
+
                 <div className="form-group-v2">
                   <label htmlFor="about-message" className="form-label-v2">Message</label>
                   <textarea id="about-message" name="message" rows="5" className="form-textarea-v2" placeholder="Describe your film or production idea" value={form.message} onChange={handleInput}></textarea>
@@ -247,7 +434,7 @@ export default function About() {
 
         {/* 4. Team Section */}
         <div className="team-section-v2">
-          <h3 className="about-subheading-v2">Our Creative Team</h3>
+          <h3 className="about-subheading-v2">Our Founding Team</h3>
           <div className="team-grid-v2">
             {teamMembers.map((member) => (
               <div key={member.id} className="team-card-v2 animate-fade-in">

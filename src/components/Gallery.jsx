@@ -254,7 +254,6 @@ export default function Gallery() {
               <img src={photo.image} alt={photo.caption} loading="lazy" decoding="async" className="gallery-img-v2" />
               <div className="gallery-item-overlay-v2">
                 <span className="gallery-zoom-icon-v2">&#65291;</span>
-                <p className="gallery-item-caption-v2">{photo.caption}</p>
               </div>
             </div>
           ))}
@@ -267,7 +266,6 @@ export default function Gallery() {
           <button className="lightbox-close-v2" onClick={() => setActivePhoto(null)}>&times;</button>
           <div className="lightbox-content-v2" onClick={(e) => e.stopPropagation()}>
             <img src={activePhoto.image} alt={activePhoto.caption} className="lightbox-img-v2" />
-            <p className="lightbox-caption-v2">{activePhoto.caption}</p>
           </div>
         </div>
       )}

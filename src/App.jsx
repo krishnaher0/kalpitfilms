@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Header from './components/Header';
 import HeroSlider from './components/HeroSlider';
 import Offers from './components/Offers';
+import OfferDetail from './components/OfferDetail';
 import Gallery from './components/Gallery';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -62,6 +63,7 @@ function AppContent({ theme, toggleTheme, setTheme }) {
             </>
           } />
           <Route path="/about" element={<About />} />
+          <Route path="/offer/:slug" element={<OfferDetail />} />
         </Routes>
       </main>
 
