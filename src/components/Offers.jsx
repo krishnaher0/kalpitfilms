@@ -2,6 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Offers.css';
 
+const localFilmProductionImage = '/offers/film-production.jpeg';
+const nepalasproduction = '/offers/nepalas_production.png';
+
 const offersData = [
 
   {
@@ -10,7 +13,7 @@ const offersData = [
     title: 'Film Production',
     tag: 'Feature Films and Short Films, Produced in Nepal.',
     desc: 'Development to delivery — narrative production built for Nepal\'s landscapes, stories, and production realities. We support feature films, short films, independent and experimental work, and international co-productions with line production and production management.',
-    image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop'
+    image: localFilmProductionImage
   },
   {
     id: 2,
@@ -18,7 +21,7 @@ const offersData = [
     title: 'Nepal as a Production Destination',
     tag: 'You Bring the Project. We Help You Make Nepal Work',
     desc: 'Full production fixing and local production management for international film, documentary, commercial, and music productions in Nepal.',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&h=400&fit=crop'
+    image:  nepalasproduction
   },
   {
     id: 3,

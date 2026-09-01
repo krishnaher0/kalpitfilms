@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './OfferDetail.css';
 
+const localFilmProductionImage = '/offers/film-production.jpeg';
+
 const offersData = [
   {
     id: 1,
@@ -9,7 +11,7 @@ const offersData = [
     title: 'Film Production',
     tag: 'Feature Films and Short Films, Produced in Nepal.',
     desc: 'Development to delivery — narrative production built for Nepal\'s landscapes, stories, and production realities. We support feature films, short films, independent and experimental work, and international co-productions with line production and production management.',
-    image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80',
+    image: localFilmProductionImage,
     fullDescription: `We produce feature and short films, fiction and non-fiction, for Nepali filmmakers and international productions choosing Nepal as a shoot location.
 
 We support feature films, short films, independent and experimental work, and international co-productions, with line production and production management covering the full shoot.
