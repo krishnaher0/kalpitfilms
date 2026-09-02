@@ -4,7 +4,7 @@ import './HeroSlider.css';
 const sliderSlides = [
   { id: 1, title: 'KALPIT FILMS', subtitle: '"I dream in 24fps"', image: '/pictures/Chabahil Bus.JPG', targetId: 'about' },
   { id: 2, title: 'It starts with an idea.', subtitle: '', image: '/pictures/FCC1DD78-931B-40F3-9A20-44C8696DA5B4.jpeg', targetId: 'about' },
-  { id: 3, title: 'Then we build the story.', subtitle: '', image: '/pictures/_MG_4088.jpg', targetId: 'about' },
+  { id: 3, title: 'Then we build the story.', subtitle: '', image: '/pictures/balloon.jpg', targetId: 'about' },
   { id: 4, title: 'We chase the light and shadows.', subtitle: '', image: '/pictures/IMG_9490.jpeg', targetId: 'about' },
   { id: 5, title: 'We follow the character.', subtitle: '', image: '/pictures/character.jpeg', targetId: 'about' },
   { id: 6, title: 'Capture the moment.', subtitle: '', image: '/pictures/pic1.jpg', targetId: 'about' },
