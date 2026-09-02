@@ -15,8 +15,8 @@ const sliderSlides = [
   { id: 11, title: 'For the world to see.', subtitle: '', image: '/pictures/pic6.jpg', targetId: 'about' },
   {
     id: 12,
-    title: 'Make cinemas. New vision. New perspectives.',
-    titleLines: ['Make cinemas.', 'New vision.', 'New perspectives.'],
+    title: ' New Vision. Better Cinemas.',
+    titleLines: [ 'New vision.', 'Better cinemas.'],
     image: '/pictures/pic7.jpg',
     targetId: 'about'
   }
