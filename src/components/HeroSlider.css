@@ -126,6 +126,10 @@
   transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
 }
 
+.slide-title-line-v2 {
+  display: block;
+}
+
 .slide-title-white-v2 {
   color: #ffffff;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);

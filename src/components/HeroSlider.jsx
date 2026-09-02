@@ -13,7 +13,13 @@ const sliderSlides = [
   { id: 9, title: 'Make the ordinary unforgettable.', subtitle: '', image: '/pictures/pic4.jpg', targetId: 'about' },
   { id: 10, title: 'Create the world.', subtitle: '', image: '/pictures/pic5.jpg', targetId: 'about' },
   { id: 11, title: 'For the world to see.', subtitle: '', image: '/pictures/pic6.jpg', targetId: 'about' },
-  { id: 12, title: 'Make cinemas. New vision. New perspectives.', image: '/pictures/pic7.jpg', targetId: 'about' }
+  {
+    id: 12,
+    title: 'Make cinemas. New vision. New perspectives.',
+    titleLines: ['Make cinemas.', 'New vision.', 'New perspectives.'],
+    image: '/pictures/pic7.jpg',
+    targetId: 'about'
+  }
 ];
 
 export default function HeroSlider({ scrollToSection }) {
@@ -86,7 +92,15 @@ export default function HeroSlider({ scrollToSection }) {
             <div className="container slide-content-container-v2">
               <div className="slide-content-v2">
                 <h1 className={`slide-title-v2 ${slide.id === 2 || slide.id === 4 ? 'slide-title-white-v2' : ''}`}>
-                  {slide.title}
+                  {slide.titleLines ? (
+                    slide.titleLines.map((line, lineIndex) => (
+                      <span key={`${slide.id}-line-${lineIndex}`} className="slide-title-line-v2">
+                        {line}
+                      </span>
+                    ))
+                  ) : (
+                    slide.title
+                  )}
                 </h1>
                 {slide.subtitle && <p className="slide-subtitle-v2">{slide.subtitle}</p>}
               </div>
