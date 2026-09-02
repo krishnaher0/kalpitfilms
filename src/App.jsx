@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Header from './components/Header';
 import HeroSlider from './components/HeroSlider';
 import Offers from './components/Offers';
+import FullService from './components/FullService';
 import OfferDetail from './components/OfferDetail';
 import Gallery from './components/Gallery';
 import About from './components/About';
@@ -58,6 +59,7 @@ function AppContent({ theme, toggleTheme, setTheme }) {
             <>
               <HeroSlider scrollToSection={scrollToSection} />
               <Offers />
+              <FullService />
               <Gallery />
               <Contact />
             </>

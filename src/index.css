@@ -17,6 +17,7 @@
   --font-serif: 'Cormorant Garamond', serif;
   --font-sans: 'Outfit', sans-serif;
   --font-script: 'Charm', cursive;
+  --font-courier: 'Courier New', 'Courier', monospace;
   
   --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: all 0.25s ease;

@@ -103,6 +103,18 @@
   transition: var(--transition-fast);
 }
 
+[data-theme="light"] .hero-overlay {
+  background: transparent !important;
+}
+
+[data-theme="light"] .hero-eyebrow,
+[data-theme="light"] .hero-title,
+[data-theme="light"] .hero-description,
+[data-theme="light"] .scroll-text,
+[data-theme="light"] .gold-text {
+  color: #ffffff !important;
+}
+
 .hero-scroll-indicator:hover {
   opacity: 1;
 }
