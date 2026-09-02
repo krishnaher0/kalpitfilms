@@ -1,0 +1,27 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="64" y1="32" x2="448" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111111"/>
+      <stop offset="1" stop-color="#1F1F1F"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="118" y1="112" x2="390" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7D98A"/>
+      <stop offset="0.5" stop-color="#D9A441"/>
+      <stop offset="1" stop-color="#C17A14"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="110" fill="url(#bg)"/>
+
+  <circle cx="256" cy="256" r="196" stroke="url(#gold)" stroke-opacity="0.4" stroke-width="2"/>
+  <circle cx="256" cy="256" r="164" stroke="url(#gold)" stroke-opacity="0.28" stroke-width="2"/>
+
+  <path d="M150 130H195V382H150V130ZM201 256L268 130H330L265 254L332 382H270L201 256Z" fill="url(#gold)"/>
+  <path d="M246 130H290L364 254L290 382H246L318 254L246 130Z" fill="url(#gold)" fill-opacity="0.92"/>
+
+  <path d="M169 130H212L280 216L221 256L169 130Z" fill="#F9E9B5" fill-opacity="0.35"/>
+  <path d="M224 268L285 382H229L175 287L224 268Z" fill="#F9E9B5" fill-opacity="0.18"/>
+
+  <rect x="116" y="392" width="280" height="2.5" rx="1.25" fill="url(#gold)" fill-opacity="0.75"/>
+  <text x="256" y="438" text-anchor="middle" fill="#F7D98A" font-family="Georgia, 'Times New Roman', serif" font-size="32" letter-spacing="7">KALPIT</text>
+</svg>
