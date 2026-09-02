@@ -45,7 +45,7 @@ export default function FullService() {
       <div className="container full-service-container">
         <div className="offers-header-v2 full-service-header">
           <span className="offers-subtitle-v2">Production Services</span>
-          <h2 className="offers-title-main-v2 full-service-title">Films, Commercials, Documentary, Short Films &amp; Music Videos Production in Nepal</h2>
+          <h1 className="offers-title-main-v2 full-service-title">Every Stage. One Team.</h1>
           <div className="offers-header-line-v2"></div>
         </div>
 
@@ -82,7 +82,7 @@ export default function FullService() {
         </div>
 
         <div className="full-service-section-block">
-          <h3>What We Do</h3>
+          <h2>What We Do</h2>
           <div className="full-service-list-wrap">
             {whatWeDo.map((item) => (
               <div key={item} className="full-service-list-item">
@@ -94,7 +94,7 @@ export default function FullService() {
         </div>
 
         <div className="full-service-section-block process-block">
-          <h3>How We Work</h3>
+          <h2>The Pipeline</h2>
           <div className="full-service-process-grid">
             {howWeWork.map((step, index) => (
               <div key={step.title} className="full-service-process-card">
@@ -107,7 +107,7 @@ export default function FullService() {
         </div>
 
         <div className="full-service-section-block strengths-block">
-          <h3>Why Kalpit Films</h3>
+          <h2>Why Work With Us</h2>
           <ul className="full-service-strengths">
             {strengths.map((strength) => (
               <li key={strength}>{strength}</li>

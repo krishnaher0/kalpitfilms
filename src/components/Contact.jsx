@@ -71,7 +71,7 @@ export default function Contact() {
         {/* Title */}
         <div className="section-title-wrapper">
           <span className="section-subtitle">Reach Us</span>
-          <h2 className="section-title">Contact Studio</h2>
+          <h1 className="section-title">Let&apos;s Talk About What You&apos;re Making.</h1>
         </div>
 
         <div className="contact-grid-v2">
@@ -99,6 +99,13 @@ export default function Contact() {
                 <h4 className="details-lbl-v2">Call Studio</h4>
                 <p className="details-val-v2">+977 9846967698</p>
               </div>
+            </div>
+
+            <div className="details-item-v2">
+              <h4 className="details-lbl-v2">Explore More</h4>
+              <p className="details-val-v2">
+                <a href="/offer/film-production">What We Do</a> · <a href="/offer/nepal-production-destination">International Production Services</a>
+              </p>
             </div>
 
             <div className="socials-list-v2">

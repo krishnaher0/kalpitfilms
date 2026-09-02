@@ -25,12 +25,12 @@ export default function ServiceLandingPage({
 
         <div className="service-landing-content">
           <div className="service-landing-panel">
-            <h2>Why choose Kalpit Films</h2>
+            <h2>The Pipeline</h2>
             <p>{intro}</p>
           </div>
 
           <div className="service-landing-panel">
-            <h2>What we deliver</h2>
+            <h2>Full Capability Index</h2>
             <ul className="service-landing-list">
               {bullets.map((item) => (
                 <li key={item}>{item}</li>

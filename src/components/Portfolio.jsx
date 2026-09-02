@@ -103,7 +103,7 @@ const portfolioData = [
   }
 ];
 
-export default function Portfolio({ activeVideo, onPlayVideo }) {
+export default function Portfolio({ activeVideo, onPlayVideo = () => {} }) {
   const [activeTab, setActiveTab] = useState('movies');
 
   const filteredItems = portfolioData.filter(item => item.category === activeTab);
@@ -113,8 +113,10 @@ export default function Portfolio({ activeVideo, onPlayVideo }) {
       <div className="container">
         <div className="section-title-wrapper">
           <span className="section-subtitle">Filmography</span>
-          <h2 className="section-title">Selected Portfolio</h2>
+          <h1 className="section-title">The Work Speaks Nepali. And Every Other Language, Too.</h1>
         </div>
+
+        <h2>Filter by Category</h2>
 
         {/* Portfolio Tabs - Integrated inline */}
         <div className="portfolio-tabs-v2">

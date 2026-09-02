@@ -8,10 +8,71 @@ import OfferDetail from './components/OfferDetail';
 import Gallery from './components/Gallery';
 import About from './components/About';
 import Contact from './components/Contact';
+import Portfolio from './components/Portfolio';
 import ServiceLandingPage from './components/ServiceLandingPage';
 import './App.css';
 
 const servicePages = [
+  {
+    path: '/film-production-house-in-nepal',
+    seo: {
+      title: 'Film Production House in Nepal | Kalpit Films',
+      description: 'Looking for a film production house in Nepal? Kalpit Films creates cinematic films, documentaries, and commercial work for brands, campaigns, and productions across Nepal.',
+      keywords: 'film production house in Nepal, film production company in Nepal, movie production company Nepal, cinematic production house Nepal',
+      canonicalPath: '/film-production-house-in-nepal'
+    },
+    content: {
+      eyebrow: 'Film Production House',
+      title: 'Film Production House in Nepal',
+      description: 'We are a film production house in Nepal helping brands, filmmakers, and businesses turn ideas into cinematic visual stories.',
+      intro: 'Kalpit Films delivers full-service production support from concept development and planning to filming, editing, and final delivery for projects across Nepal.',
+      bullets: [
+        'Feature films and short films',
+        'Commercial and branded storytelling',
+        'Production planning and crew management',
+        'Location scouting in Kathmandu and beyond',
+        'Documentary filmmaking and narrative stories',
+        'Post-production and final delivery'
+      ],
+      process: [
+        'We understand your concept, goals, production requirements, and timeline before planning the shoot.',
+        'Our team coordinates cast, crew, permits, equipment, and locations to keep production smooth and on schedule.',
+        'We create and deliver a polished production that feels cinematic, clear, and ready for audience impact.'
+      ],
+      ctaLabel: 'Discuss Your Project',
+      ctaHref: '#contact'
+    }
+  },
+  {
+    path: '/film-production-company-in-nepal',
+    seo: {
+      title: 'Film Production Company in Nepal | Kalpit Films',
+      description: 'Hire a film production company in Nepal for documentaries, commercials, branded films, and high-end storytelling across Kathmandu and the Himalayan region.',
+      keywords: 'film production company in Nepal, video production company Nepal, creative production company Kathmandu, cinematic video production Nepal',
+      canonicalPath: '/film-production-company-in-nepal'
+    },
+    content: {
+      eyebrow: 'Production Company',
+      title: 'Film Production Company in Nepal',
+      description: 'Kalpit Films is a production company in Nepal built for creative storytelling, polished visuals, and smooth production execution across multiple formats.',
+      intro: 'From cast and crew to location logistics and final edit, we help clients produce standout content that feels cinematic and intentional.',
+      bullets: [
+        'Commercial film production',
+        'Documentary production services',
+        'Corporate film and brand stories',
+        'Wedding and event cinema',
+        'Cinematography and location support',
+        'Production management and editing'
+      ],
+      process: [
+        'We align the brief, creative direction, and production strategy with the client’s message and audience.',
+        'Our team executes the shoot with disciplined planning, technical care, and strong on-set coordination.',
+        'We finish with post-production and delivery tailored for digital, broadcast, and social channels.'
+      ],
+      ctaLabel: 'Book a Production',
+      ctaHref: '#contact'
+    }
+  },
   {
     path: '/film-production',
     seo: {
@@ -239,9 +300,9 @@ function AppContent({ theme, toggleTheme, setTheme }) {
           <Route path="/" element={
             <>
               <Seo
-                title="Kalpit Films | Film Production Company in Kathmandu, Nepal"
-                description="Kalpit Films is a cinematic production house in Kathmandu, Nepal creating award-style films, documentaries, commercials, music videos, and live event productions."
-                keywords="film production Kathmandu, documentary production Nepal, commercial video company Kathmandu, cinematography Nepal, wedding films Nepal, event production Kathmandu"
+                title="KALPIT FILMS | Film, Advertising & Production House in Nepal"
+                description="Nepal-based production house covering film, documentary, advertising, music, events, and international production — from concept development to final delivery."
+                keywords="production house Nepal, production company Nepal, film production Nepal, film production Kathmandu"
                 canonicalPath="/"
               />
               <HeroSlider scrollToSection={scrollToSection} />
@@ -254,12 +315,99 @@ function AppContent({ theme, toggleTheme, setTheme }) {
           <Route path="/about" element={
             <>
               <Seo
-                title="About Kalpit Films | Documentary & Film Production Nepal"
-                description="Learn about Kalpit Films, a Kathmandu-based film production studio crafting documentaries, films, commercials, and cultural storytelling projects across Nepal."
-                keywords="about Kalpit Films, film production company Nepal, documentary filmmakers Kathmandu, cinematic studio Nepal"
+                title="About Kalpit Films | Creative Production House in Nepal"
+                description="Kalpit Films is a Kathmandu-based production house connecting development, casting, locations, production, and post into one creative ecosystem."
+                keywords="production company Nepal, film production house Nepal, Kathmandu production company"
                 canonicalPath="/about"
               />
               <About />
+            </>
+          } />
+          <Route path="/our-work" element={
+            <>
+              <Seo
+                title="Our Work | Film, Commercial & Event Production Portfolio — Kalpit Films"
+                description="Browse Kalpit Films’s portfolio of films, commercials, music videos, documentaries, and live events produced in Nepal."
+                keywords="production company Nepal portfolio, film production Kathmandu"
+                canonicalPath="/our-work"
+              />
+              <Portfolio />
+            </>
+          } />
+          <Route path="/portfolio" element={
+            <>
+              <Seo
+                title="Our Work | Film, Commercial & Event Production Portfolio — Kalpit Films"
+                description="Browse Kalpit Films’s portfolio of films, commercials, music videos, documentaries, and live events produced in Nepal."
+                keywords="production company Nepal portfolio, film production Kathmandu"
+                canonicalPath="/portfolio"
+              />
+              <Portfolio />
+            </>
+          } />
+          <Route path="/filming-in-nepal" element={
+            <>
+              <Seo
+                title="Filming in Nepal | Production Destination Guide — Kalpit Films"
+                description="An honest guide to filming in Nepal — landscapes, culture, and the production realities international crews should plan for."
+                keywords="filming in Nepal, film production Nepal, Nepal shooting locations"
+                canonicalPath="/filming-in-nepal"
+              />
+              <section className="section">
+                <div className="container">
+                  <h1>A Country That Doesn't Repeat Itself.</h1>
+                  <p>Filming in Nepal is a production company Nepal opportunity for filmmakers, agencies, and international crews who want distinct landscapes, cultural texture, and strong visual contrast without the polish of a more familiar production hub.</p>
+                  <p>From Himalayan terrain and heritage streets to river valleys and modern urban scale, Nepal offers a wide range of shooting conditions that can support commercial, documentary, and narrative projects.</p>
+                  <h2>What Nepal Offers</h2>
+                  <ul>
+                    <li>Varied geography in a compact country, from cities to mountain and rural settings.</li>
+                    <li>Authentic visual character for films, documentaries, and branded work.</li>
+                    <li>Strong value for international crews seeking unique locations and efficient production planning.</li>
+                  </ul>
+                  <h2>What to Plan For</h2>
+                  <ul>
+                    <li>Permits, access arrangements, and local logistics require early planning.</li>
+                    <li>Seasonality, roads, and weather can affect location schedules and crew movement.</li>
+                    <li>Working with a local production partner reduces friction and keeps the shoot realistic.</li>
+                  </ul>
+                  <p><a href="/offer/nepal-production-destination">International Production Services</a> · <a href="/offer/film-production">Locations</a></p>
+                </div>
+              </section>
+            </>
+          } />
+          <Route path="/clients" element={
+            <>
+              <Seo
+                title="Clients & Collaborators | Kalpit Films"
+                description="Brands, artists, and organizations Kalpit Films has partnered with on production projects across Nepal."
+                keywords="production company Nepal clients"
+                canonicalPath="/clients"
+              />
+              <section className="section">
+                <div className="container">
+                  <h1>Who We&apos;ve Worked With.</h1>
+                  <p>Kalpit Films works with brands, agencies, artists, cultural organizations, NGOs, and international production teams who need a reliable production company Nepal partner with both creative sensitivity and production discipline.</p>
+                  <ul>
+                    <li>Brand and advertising clients</li>
+                    <li>Independent filmmakers and documentary teams</li>
+                    <li>Artists, labels, and performance groups</li>
+                    <li>NGOs and awareness-focused organizations</li>
+                    <li>International crews seeking local production fixers and line production support</li>
+                  </ul>
+                  <p><a href="/our-work">Portfolio</a> · <a href="/contact">Contact</a></p>
+                </div>
+              </section>
+            </>
+          } />
+          <Route path="/contact" element={
+            <>
+              <Seo
+                title="Contact Us | Start a Production Project in Nepal — Kalpit Films"
+                description="Get in touch with Kalpit Films to start a film, commercial, music video, event, or international production project in Nepal."
+                keywords="production company Nepal contact"
+                canonicalPath="/contact"
+              />
+              <Contact />
             </>
           } />
           {servicePages.map(({ path, seo, content }) => (
@@ -282,9 +430,9 @@ function AppContent({ theme, toggleTheme, setTheme }) {
           <Route path="/offer/:slug" element={
             <>
               <Seo
-                title="Production Services | Kalpit Films"
-                description="Explore Kalpit Films production services including film production, documentaries, commercials, event coverage, casting, and post-production in Nepal."
-                keywords="film production services Nepal, documentary production Kathmandu, commercial videos Nepal, event production company Kathmandu"
+                title="What We Do | Film, Advertising, Music & Event Production — Kalpit Films"
+                description="Explore Kalpit Films’s full production capabilities in Nepal — development, casting, locations, film, advertising, music, events, and international production services."
+                keywords="production company Nepal, film production services Nepal, production house Kathmandu"
                 canonicalPath="/offer"
               />
               <OfferDetail />

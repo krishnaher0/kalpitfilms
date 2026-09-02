@@ -157,13 +157,12 @@ export default function About() {
         
         {/* Title */}
         <div className="section-title-wrapper">
-         
-          <h2 className="section-title">About </h2>
+          <h1 className="section-title">Story, People, Production, Culture, Execution.</h1>
         </div>
 
         <div className="about-single-story-panel-v2">
           <span className="section-subtitle">Who We Are</span>
-          <h3 className="about-subheading-v2">Kalpit Films</h3>
+          <h2 className="about-subheading-v2">Kalpit Films</h2>
 
           <div className="about-single-copy-v2">
             <p>
@@ -227,7 +226,7 @@ export default function About() {
 
         {/* 1. What We Do Section - Calibrated list layout */}
         <div className="capabilities-section-v2">
-          <h3 className="about-subheading-v2">Story, People, Production, Culture, Execution</h3>
+          <h2 className="about-subheading-v2">What We Believe</h2>
           <br height="20"></br>
           <h3 className="about-subheading-v2">Collaborate with us</h3>
           <div className="capabilities-grid-v2">

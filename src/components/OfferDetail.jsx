@@ -43,9 +43,9 @@ const offersData = [
   {
     id: 1,
     slug: 'film-production',
-    title: 'Film Production',
+    title: 'Feature & Short Film Production in Nepal',
     tag: 'Feature Films and Short Films, Produced in Nepal.',
-    desc: 'Development to delivery — narrative production built for Nepal\'s landscapes, stories, and production realities. We support feature films, short films, independent and experimental work, and international co-productions with line production and production management.',
+    desc: 'Feature and short film production in Nepal — line production, casting, locations, and full production management.',
     image: localFilmProductionImage,
     fullDescription: `We produce feature and short films, fiction and non-fiction, for Nepali filmmakers and international productions choosing Nepal as a shoot location.
 
@@ -68,9 +68,9 @@ For Nepali filmmakers, this means structure and access to a wide technical netwo
   {
     id: 2,
     slug: 'nepal-production-destination',
-    title: 'Nepal as a Production Destination',
+    title: 'International Production Fixer in Nepal',
     tag: 'You Bring the Project. We Help You Make Nepal Work',
-    desc: 'Full production fixing and local production management for international film, documentary, commercial, and music productions in Nepal.',
+    desc: 'Full production fixing and local production management in Nepal for international film, documentary, and commercial crews.',
     image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80',
     fullDescription: `Nepal is an extraordinary location for film and production, with diverse landscapes, rich culture, and competitive production costs. However, navigating permits, crew coordination, location logistics, and cultural protocols requires local expertise.
 
@@ -93,9 +93,9 @@ We handle all aspects of production fixing and local management for internationa
   {
     id: 3,
     slug: 'advertisement-commercial',
-    title: 'Commercials That Look Like the Budget Was Bigger.',
-    tag: 'Advertisement and brand film production for Nepali and international brands and agencies.',
-    desc: 'We produce commercials, brand films, corporate content, and campaign work — either as a brand\'s production partner from concept through delivery, or as an agency\'s execution arm on set.',
+    title: 'Advertisement & Commercial Production in Nepal',
+    tag: 'Commercials That Look Like the Budget Was Bigger.',
+    desc: 'Commercial and brand film production in Nepal for local and international brands and agencies.',
     image: 'https://images.unsplash.com/photo-1601042879364-f3947d3f9c16?w=800&q=80',
     fullDescription: `Our commercial work spans TV commercials, digital ads, brand and corporate films, campaign and social content, product films, and commercial photography. We handle concept refinement, casting, locations, shoot production, and multi-format delivery for broadcast, social, and vertical media.\n\nWe work directly with brands who need creative development as well as production, and alongside agencies who already have the concept and need a dependable team on the ground to execute it.`,
     capabilities: [
@@ -116,9 +116,9 @@ We handle all aspects of production fixing and local management for internationa
   {
     id: 4,
     slug: 'development-preproduction',
-    title: 'Development and Pre-Production',
-    tag: 'Story development, screenwriting, planning, and workshops — the stage where most of a project\'s eventual quality gets decided.',
-    desc: 'We work with projects at their earliest and most fragile stage — before a schedule exists, sometimes before a script does — helping shape an idea into something that can actually be produced.',
+    title: 'Story & Script Development in Nepal',
+    tag: 'Development • Planning • Workshops',
+    desc: 'Idea development, screenwriting, script consulting, and production planning for film, advertising, and documentary projects in Nepal.',
     image: 'https://images.unsplash.com/photo-1512314889357-e157c22f938d?w=800&q=80',
     fullDescription: `Pre-production is where great projects are built or where problems emerge later. We work with creators and producers at the earliest stage, shaping raw ideas into fully planned, producible projects.`,
     capabilities: [
@@ -139,9 +139,9 @@ We handle all aspects of production fixing and local management for internationa
   {
     id: 5,
     slug: 'music-video-production',
-    title: 'From the Studio to the Screen.',
-    tag: 'Music video production, song production, and song fixing for artists across Nepal & abroad.',
-    desc: 'We produce music videos and original music content, and collaborate with artists and labels at any stage — from a song still taking shape to a finished track ready for a video.',
+    title: 'Music Video Production & Song Fixing in Nepal',
+    tag: 'Music Videos • Song Production & Fixing',
+    desc: 'Music video production, song production, and song fixing services for artists and labels in Nepal.',
     image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80',
     fullDescription: `Our music work includes music video production, song production and song fixing, performance videos and live sessions, album visuals, music documentaries, and artist branding content. For artists arriving with a finished track, we handle concept, locations, casting, choreography coordination, and full shoot production. For artists earlier in the process, we can fix a song's production before it reaches a camera at all — and for artists with nothing finished yet, we can develop the concept alongside them from the start.`,
     capabilities: [
@@ -161,9 +161,9 @@ We handle all aspects of production fixing and local management for internationa
   {
     id: 6,
     slug: 'events-theatre-live',
-    title: 'Live Events, Produced Like a Production.',
-    tag: 'Events & Concerts',
-    desc: 'We organize and produce concerts, festivals, and brand and cultural events — our own, and in partnership with artists, promoters, and sponsors — applying full production discipline to a format with no second take.',
+    title: 'Concert & Event Production in Nepal',
+    tag: 'What We Produce • Working With Touring Artists',
+    desc: 'Concert and live event production in Nepal for national and international artists — stage, logistics, and full execution.',
     image: '/services/events.jpg',
     fullDescription: `Our live production work covers concert organization for national and international artists, music festivals, cultural and brand events, stage production, and event content production. We manage artist coordination, technical and venue coordination, production logistics, and backstage management, building a run-of-show that accounts for what could go wrong, not just what should go right.`,
     capabilities: [
@@ -183,9 +183,9 @@ We handle all aspects of production fixing and local management for internationa
   {
     id: 7,
     slug: 'equipment-postproduction',
-    title: 'Equipment & Post Production',
-    tag: 'Professional equipment rental and post-production services',
-    desc: 'State-of-the-art equipment rental and professional post-production services. Comprehensive editing, color grading, sound design, VFX, and mastering to elevate your project to broadcast quality.',
+    title: 'Post-Production Services in Nepal',
+    tag: 'What We Coordinate • In-House vs. Collaborators',
+    desc: 'Editing, color grading, sound, and delivery coordination for film, advertising, and music video projects in Nepal.',
     image: '/services/equipment.jpg',
     fullDescription: `Post-production is where your footage becomes a finished product. We offer rental of professional cameras and equipment, along with comprehensive post-production services to deliver broadcast-quality results.`,
     capabilities: [
@@ -209,9 +209,9 @@ We handle all aspects of production fixing and local management for internationa
   {
     id: 8,
     slug: 'documentaries-production',
-    title: 'Real Stories. Handled with Respect and Rigor.',
-    tag: 'Research to release — our own documentaries, and yours.',
-    desc: 'We produce original documentaries and collaborate with Nepali and international filmmakers at any stage — from early research and story development through to distribution — while also supporting visiting teams filming in Nepal.',
+    title: 'Documentary Production in Nepal',
+    tag: 'What We Produce • Supporting International Teams',
+    desc: 'Documentary production and field production support in Nepal, for local filmmakers and international documentary teams.',
     image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80',
     fullDescription: `Kalpit Films develops and produces its own documentary work, and partners with other filmmakers, broadcasters, and production companies who need a collaborator at a specific point in the process — research, story development, access and permissions, the shoot itself, post, or release. We work across feature and short documentaries, investigative and research-based projects, cultural and nature documentaries.`,
     capabilities: [
@@ -234,9 +234,9 @@ We handle all aspects of production fixing and local management for internationa
   {
     id: 9,
     slug: 'creative-collaborations',
-    title: 'Creative Networks & Collaborations',
-    tag: 'Strategic partnerships and creative collaboration',
-    desc: 'Strategic partnerships and creative collaborations with industry professionals, artists, and production houses. We connect talent and resources to bring ambitious projects to life through collective expertise.',
+    title: 'Creative Network & Collaborations',
+    tag: 'Our Collaborators • How We Bring Them In',
+    desc: 'The photographers, designers, and performers Kalpit Films collaborates with across Nepal’s creative industry.',
     image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80',
     fullDescription: `Great projects often require collaboration across multiple creative disciplines and production companies. We facilitate strategic partnerships and collaborations, connecting creators with the right partners and resources.`,
     capabilities: [
@@ -257,9 +257,9 @@ We handle all aspects of production fixing and local management for internationa
   {
     id: 10,
     slug: 'workshops',
-    title: 'Workshops',
-    tag: 'Educational programs and training in film production',
-    desc: 'Educational workshops and training programs in filmmaking, production techniques, cinematography, and creative direction. Perfect for aspiring filmmakers and production professionals looking to enhance their skills.',
+    title: 'Filmmaking & Acting Workshops in Nepal',
+    tag: 'Workshop Programs • Project-Embedded Workshops',
+    desc: 'Acting, filmmaking, screenwriting, and directing workshops in Nepal, run by a working production house.',
     image: 'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?w=800&q=80',
     fullDescription: `We believe in sharing knowledge and developing the next generation of filmmakers and production professionals. Our workshops cover practical skills, creative vision, and industry practices.`,
     capabilities: [
@@ -282,9 +282,9 @@ We handle all aspects of production fixing and local management for internationa
   {
     id: 11,
     slug: 'casting-talent',
-    title: 'Faces That Belong to the Story.',
-    tag: 'Casting & Talent',
-    desc: 'We cast for our own productions and for other filmmakers, at any scale — professional actors, background talent, and authentic faces found directly in the communities a story is set in.',
+    title: 'Film & TV Casting in Nepal',
+    tag: 'Who We Cast For • How Casting Works',
+    desc: 'Casting and talent scouting for film, documentary, commercial, and music video productions in Nepal.',
     image: 'https://images.unsplash.com/photo-1517630800677-932d836ab680?w=800&q=80',
     fullDescription: `We support casting for feature and short films, international productions, documentaries, commercials, music videos, digital content, and theatre — covering professional actors, background artists, models, musicians, dancers, and community talent, with casting strategy, audition management, and full casting coordination. Casting for young performers is handled only where legally appropriate and with full guardian involvement. We do not claim to represent specific actors; casting is coordinated project by project through open casting processes.`,
     capabilities: [
@@ -304,9 +304,9 @@ We handle all aspects of production fixing and local management for internationa
   {
     id: 12,
     slug: 'theatre-performance',
-    title: 'Where the Stage Meets the Street.',
-    tag: 'Theatre & Performance',
-    desc: 'We produce theatre on stage and in public space — our own productions and collaborations — direction, staging, and performer coordination for formal work, and street theatre built to reach audiences wherever they already are.',
+    title: 'Theatre & Street Theatre Production in Nepal',
+    tag: 'Stage Theatre • Street Theatre',
+    desc: 'Theatre and street theatre production in Nepal for cultural, artistic, and community work.',
     image: 'https://images.unsplash.com/photo-1507676184212-d0330a151f84?w=800&q=80',
     fullDescription: `Our performance work spans theatre play production, theatre and acting workshops, street theatre, experimental and community theatre, and performance art, with full production management from script or adaptation through to staging. Street theatre often overlaps with our awareness and social-impact work, but stands as a performance discipline in its own right.`,
     capabilities: [
@@ -326,9 +326,9 @@ We handle all aspects of production fixing and local management for internationa
   {
     id: 13,
     slug: 'social-impact-awareness',
-    title: 'Stories That Are Meant to Change Something.',
-    tag: 'Social Impact & Awareness',
-    desc: 'We produce content and live programming for organizations working to change minds, behavior, or policy — built for genuine reach, not just polish.',
+    title: 'Awareness Campaign Production in Nepal',
+    tag: 'Campaign Production • Theatre-Based Awareness',
+    desc: 'Production for awareness campaigns and social impact programs in Nepal, for NGOs and mission-driven organizations.',
     image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80',
     fullDescription: `This work includes awareness and social awareness campaigns, street plays and theatre-based awareness programs, educational and community campaigns, social impact films, and documentary-style campaign content for NGOs and INGOs. We are a production partner for this work, not an NGO ourselves, and build every campaign starting from the intended audience and outcome rather than the format.`,
     capabilities: [
@@ -348,9 +348,9 @@ We handle all aspects of production fixing and local management for internationa
   {
     id: 14,
     slug: 'equipment-rental',
-    title: 'The Right Gear. Ready When You Are.',
-    tag: 'Equipment Rental',
-    desc: 'We rent professional cinema camera, lenses, lighting, grip, and sound equipment, with the option of experienced operators alongside the gear.',
+    title: 'Cinema Camera & Lighting Equipment Rental in Nepal',
+    tag: 'What We Rent • Equipment With Crew',
+    desc: 'Rent cinema camera, lighting, and grip equipment in Nepal, with optional experienced operators.',
     image: '/services/equipment.jpg',
     fullDescription: `Our equipment inventory covers cinema cameras, DSLR and mirrorless cameras, cinema lenses, lighting and grip equipment, sound equipment, and production accessories, with drone/aerial support where legally and operationally available [TO BE CONFIRMED]. We work with independent filmmakers, other production companies, and visiting international crews who prefer sourcing gear locally over shipping it in.`,
     capabilities: [

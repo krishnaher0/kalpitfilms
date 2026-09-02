@@ -76,7 +76,9 @@ export default function Header({ theme, toggleTheme, setTheme }) {
                 <a onClick={() => handleNavClick('home')} className="nav-link-v2">Home</a>
                 <a onClick={() => handleGalleryClick('bts')} className="nav-link-v2">Behind the scenes</a>
                 <a onClick={() => handleGalleryClick('pictures')} className="nav-link-v2">Pictures</a>
+                <a onClick={() => navigate('/our-work')} className="nav-link-v2">Our Work</a>
                 <a onClick={handleAboutClick} className="nav-link-v2">About</a>
+                <a onClick={() => navigate('/contact')} className="nav-link-v2">Contact</a>
               </div>
             </div>
           </nav>

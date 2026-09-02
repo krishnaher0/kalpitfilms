@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './HeroSlider.css';
 
 const sliderSlides = [
-  { id: 1, title: 'Kalpit films', subtitle: '"I dream in 24fps."', image: '/pictures/Chabahil Bus.JPG', targetId: 'about' },
+  { id: 1, title: 'Stories Made in Nepal. Built for the World.', subtitle: 'Production House • Film • Advertising • Events', image: '/pictures/Chabahil Bus.JPG', targetId: 'about' },
   { id: 2, title: 'It starts with an idea.', subtitle: '', image: '/pictures/FCC1DD78-931B-40F3-9A20-44C8696DA5B4.jpeg', targetId: 'about' },
   { id: 3, title: 'Then we build the story.', subtitle: '', image: '/pictures/_MG_4088.jpg', targetId: 'about' },
   { id: 4, title: 'We chase the light and shadows.', subtitle: '', image: '/pictures/IMG_9490.jpeg', targetId: 'about' },
