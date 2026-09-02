@@ -1,0 +1,85 @@
+.service-landing-page {
+  padding: 120px 0 80px;
+  background: var(--bg-primary);
+}
+
+.service-landing-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.service-landing-hero {
+  max-width: 900px;
+}
+
+.service-landing-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  margin: 16px 0 18px;
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+}
+
+.service-landing-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 760px;
+}
+
+.service-landing-content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.service-landing-panel {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 28px 24px;
+}
+
+.service-landing-panel h2 {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+}
+
+.service-landing-panel p,
+.service-landing-panel li,
+.service-landing-panel p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.service-landing-list,
+.service-process {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.service-process {
+  list-style: none;
+  padding-left: 0;
+}
+
+.service-process li {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: flex-start;
+}
+
+.service-process span {
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .service-landing-content {
+    grid-template-columns: 1fr;
+  }
+}

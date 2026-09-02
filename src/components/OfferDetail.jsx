@@ -2,6 +2,41 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './OfferDetail.css';
 
+function setSeoMeta({ title, description, url, image }) {
+  document.title = title;
+
+  const metaMap = {
+    'meta[name="description"]': description,
+    'meta[property="og:title"]': title,
+    'meta[property="og:description"]': description,
+    'meta[property="og:url"]': url,
+    'meta[property="og:image"]': image,
+    'meta[name="twitter:title"]': title,
+    'meta[name="twitter:description"]': description,
+    'meta[name="twitter:url"]': url,
+    'meta[name="twitter:image"]': image,
+  };
+
+  Object.entries(metaMap).forEach(([selector, value]) => {
+    let tag = document.head.querySelector(selector);
+    if (!tag) {
+      tag = document.createElement('meta');
+      const isProperty = selector.startsWith('meta[property=');
+      tag.setAttribute(isProperty ? 'property' : 'name', selector.match(/(?:name|property)="([^"]+)"/)[1]);
+      document.head.appendChild(tag);
+    }
+    tag.setAttribute('content', value);
+  });
+
+  let canonical = document.head.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement('link');
+    canonical.setAttribute('rel', 'canonical');
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute('href', url);
+}
+
 const localFilmProductionImage = '/offers/film-production.jpeg';
 
 const offersData = [
@@ -339,6 +374,18 @@ export default function OfferDetail() {
   const navigate = useNavigate();
 
   const offer = offersData.find((item) => item.slug === slug);
+
+  React.useEffect(() => {
+    if (!offer) return;
+
+    const url = `https://kalpitfilms.com/offer/${offer.slug}`;
+    setSeoMeta({
+      title: `${offer.title} | Kalpit Films Nepal`,
+      description: offer.desc,
+      url,
+      image: offer.image.startsWith('http') ? offer.image : `https://kalpitfilms.com${offer.image}`,
+    });
+  }, [offer]);
 
   if (!offer) {
     return (
